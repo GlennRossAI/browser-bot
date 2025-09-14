@@ -15,6 +15,7 @@ import { passesRequirements } from '../filters/threshold.js';
 import { sendLeadEmail } from '../email/send.js';
 import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
+import { sanitizeEmail } from '../utils/email_utils.js';
 
 function isTodayIso(iso?: string | null): boolean {
   if (!iso) return false;
@@ -123,7 +124,8 @@ async function runOnce() {
         if (tel) phoneRaw = tel.replace(/^tel:/i, '');
       } catch {}
     }
-    logVar('contact.raw', { emailRaw, phoneRaw });
+    const emailSanitized = sanitizeEmail(emailRaw);
+    logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
 
     // Expand background
     try { await page.getByText('Show more').click({ timeout: 2000 }); } catch {}
@@ -137,7 +139,7 @@ async function runOnce() {
     // Build lead payload
     const leadData: FundlyLeadInsert = {
       fundly_id: leadId,
-      email: emailRaw.trim(),
+      email: emailSanitized || '',
       phone: phoneRaw.trim(),
       background_info: backgroundInfo,
       email_sent_at: null,
