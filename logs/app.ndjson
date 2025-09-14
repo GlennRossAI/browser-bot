@@ -3,3 +3,19 @@
 {"ts":"2025-09-14T23:46:45.009Z","level":"info","msg":"Signed in and on dashboard"}
 {"ts":"2025-09-14T23:46:45.022Z","level":"debug","var":"feed.addButtons.count","value":0}
 {"ts":"2025-09-14T23:46:47.077Z","level":"debug","var":"pipeline.ids","value":["menu-list-:rh:","tabs-:r1v:--tabpanel-0","30267","30266","30264","30265","30263","30262","30261","30260"]}
+{"ts":"2025-09-14T23:47:49.522Z","level":"info","msg":"Run started","runId":"9"}
+{"ts":"2025-09-14T23:47:49.682Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:47:54.337Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:47:54.347Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:47:56.410Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:48:00.260Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-14T23:49:00.268Z","level":"debug","var":"contact.raw","value":{"emailRaw":"","phoneRaw":""}}
+{"ts":"2025-09-14T23:49:00.300Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:49:00.469Z","level":"debug","var":"db.savedLead","value":{"id":1566,"email":"","fundly_id":"30267"}}
+{"ts":"2025-09-14T23:49:00.524Z","level":"info","msg":"Run finished","runId":"9","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-14T23:49:45.440Z","level":"info","msg":"Run started","runId":"10"}
+{"ts":"2025-09-14T23:49:45.609Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:49:50.877Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:49:50.898Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:49:52.956Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:49:56.834Z","level":"info","msg":"No Reveal needed"}

@@ -83,10 +83,30 @@ async function runOnce() {
       await page.getByRole('button', { name: /Reveal/i }).click({ timeout: 3000 });
       logMsg('Revealed contact info');
     } catch { logMsg('No Reveal needed'); }
+    try {
+      const sendCode = page.getByRole('button', { name: /Send Code to Lead/i });
+      if (await sendCode.count()) {
+        await sendCode.first().click({ timeout: 3000 });
+        logMsg('Clicked Send Code to Lead');
+        await page.waitForTimeout(1200);
+      }
+    } catch (e) { logError(e, { step: 'send-code' }); }
 
     const contactTab = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
-    const emailRaw = (await contactTab.locator('p:text-is("Email") + p').textContent().catch(() => '')) || '';
-    const phoneRaw = (await contactTab.locator('p:text-is("Phone") + p').textContent().catch(() => '')) || '';
+    let emailRaw = (await contactTab.locator('p:text-is("Email") + p').textContent().catch(() => '')) || '';
+    let phoneRaw = (await contactTab.locator('p:text-is("Phone") + p').textContent().catch(() => '')) || '';
+    if (!emailRaw) {
+      try {
+        const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href');
+        if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0];
+      } catch {}
+    }
+    if (!phoneRaw) {
+      try {
+        const tel = await page.locator('a[href^="tel:"]').first().getAttribute('href');
+        if (tel) phoneRaw = tel.replace(/^tel:/i, '');
+      } catch {}
+    }
     logVar('contact.raw', { emailRaw, phoneRaw });
 
     // Expand background
@@ -124,23 +144,27 @@ async function runOnce() {
       if (m) { leadData.looking_for_min = `$${m[1]}`; leadData.looking_for_max = `$${m[2]}`; }
     }
 
-    const savedLead = await insertLead(leadData); // upsert by email
-    saved = 1;
-    logVar('db.savedLead', { id: savedLead.id, email: savedLead.email, fundly_id: (savedLead as any).fundly_id });
+    if (!leadData.email || !leadData.email.trim()) {
+      logMsg('Skipping DB insert: missing email', { fundly_id: leadId });
+    } else {
+      const savedLead = await insertLead(leadData); // upsert by email
+      saved = 1;
+      logVar('db.savedLead', { id: savedLead.id, email: savedLead.email, fundly_id: (savedLead as any).fundly_id });
 
-    // Decision: new today + passes requirements + not emailed yet + allowed to contact
-    const newToday = isTodayIso(savedLead.created_at);
-    const thresholdOk = passesRequirements(savedLead);
-    const already = await emailAlreadySent(savedLead.email);
-    const allowed = await canContactByEmail(savedLead.email);
-    const shouldEmail = newToday && thresholdOk && !already && allowed;
+      // Decision: new today + passes requirements + not emailed yet + allowed to contact
+      const newToday = isTodayIso(savedLead.created_at);
+      const thresholdOk = passesRequirements(savedLead);
+      const already = await emailAlreadySent(savedLead.email);
+      const allowed = await canContactByEmail(savedLead.email);
+      const shouldEmail = newToday && thresholdOk && !already && allowed;
 
-    if (shouldEmail) {
-      const res = await sendLeadEmail({ to: savedLead.email }).catch(() => null);
-      if (res && !(res as any).skipped) {
-        await updateEmailSentAt(savedLead.email, new Date());
-        emailed = 1;
-        logMsg('Email sent', { to: savedLead.email });
+      if (shouldEmail) {
+        const res = await sendLeadEmail({ to: savedLead.email }).catch(() => null);
+        if (res && !(res as any).skipped) {
+          await updateEmailSentAt(savedLead.email, new Date());
+          emailed = 1;
+          logMsg('Email sent', { to: savedLead.email });
+        }
       }
     }
 
