@@ -1,15 +1,31 @@
 {
   "name": "browser-bot",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "test:fundly": "playwright test src/tests/Fundly-Run.spec.ts",
+    "test:fundly:headed": "playwright test src/tests/Fundly-Run.spec.ts --headed",
+    "extract": "tsx src/scripts/extract-and-save.ts",
+    "save-lead": "tsx src/scripts/save-lead-to-db.ts",
+    "run-migration": "tsx src/scripts/run-migration.ts",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["fundly", "scraping", "playwright", "automation"],
+  "author": "GlennRossAI",
   "license": "ISC",
-  "description": "",
+  "description": "Playwright automation for browser testing and data extraction from Fundly",
+  "dependencies": {
+    "pg": "^8.12.0",
+    "tsx": "^4.16.2"
+  },
   "devDependencies": {
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.4.0",
-    "dotenv": "^16.6.1"
+    "@types/pg": "^8.11.6",
+    "dotenv": "^16.6.1",
+    "typescript": "^5.5.4"
   }
 }
