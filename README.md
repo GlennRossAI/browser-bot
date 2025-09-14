@@ -127,6 +127,11 @@ launchctl load -w ~/Library/LaunchAgents/com.glenross.browserbot.plist
 
 # Tail logs
 tail -f logs/out.log logs/err.log
+
+Additionally, JSONL logs are written to:
+
+- `logs/app.ndjson` (info/debug)
+- `logs/error.ndjson` (errors)
 ```
 
 If you update the script or env, unload and load again to apply changes.
