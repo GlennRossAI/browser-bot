@@ -19,7 +19,9 @@
   "description": "Playwright automation for browser testing and data extraction from Fundly",
   "dependencies": {
     "pg": "^8.12.0",
-    "tsx": "^4.16.2"
+    "tsx": "^4.16.2",
+    "nodemailer": "^6.9.13",
+    "googleapis": "^144.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",

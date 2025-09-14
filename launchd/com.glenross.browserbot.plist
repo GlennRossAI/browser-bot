@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.glenross.browserbot.scan</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/jeffscottward/.nvm/versions/node/v22.15.1/bin/node</string>
+      <string>node_modules/tsx/dist/cli.mjs</string>
+      <string>src/scripts/scan-once.ts</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>NODE_ENV</key>
+      <string>production</string>
+      <key>PATH</key>
+      <string>/Users/jeffscottward/.nvm/versions/node/v22.15.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+      <key>HEADLESS</key>
+      <string>true</string>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StartInterval</key>
+    <integer>10</integer>
+    <key>StandardOutPath</key>
+    <string>/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/logs/out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/logs/err.log</string>
+    <key>KeepAlive</key>
+    <false/>
+  </dict>
+</plist>
+

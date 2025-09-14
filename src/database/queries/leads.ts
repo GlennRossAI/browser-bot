@@ -74,3 +74,16 @@ export async function updateEmailSentAt(email: string, sentAt: Date): Promise<vo
   const sql = 'UPDATE fundly_leads SET email_sent_at = $1 WHERE email = $2';
   await query(sql, [sentAt, email]);
 }
+
+export async function emailAlreadySent(email: string): Promise<boolean> {
+  const sql = 'SELECT 1 FROM fundly_leads WHERE email = $1 AND email_sent_at IS NOT NULL LIMIT 1';
+  const res = await query(sql, [email]);
+  return res.rowCount > 0;
+}
+
+export async function canContactByEmail(email: string): Promise<boolean> {
+  const sql = 'SELECT can_contact FROM fundly_leads WHERE email = $1 ORDER BY created_at DESC LIMIT 1';
+  const res = await query(sql, [email]);
+  if (!res.rowCount) return false;
+  return !!res.rows[0].can_contact;
+}
