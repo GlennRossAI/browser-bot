@@ -25,44 +25,50 @@ Playwright automation for extracting lead data from Fundly and saving to Neon da
 ## Setup
 
 1. Install dependencies:
+
 ```bash
-npm install
+pnpm install
 ```
 
 2. Set up environment variables:
+
 ```bash
 cp .env.example .env
 # Edit .env with your credentials
 ```
 
 3. Run database migrations:
+
 ```bash
-npm run run-migration src/database/migrations/001_add_looking_for_columns.sql
+pnpm run run-migration src/database/migrations/001_add_looking_for_columns.sql
 ```
 
 ## Usage
 
 ### Extract Lead Data
+
 ```bash
 # Run the Fundly extraction test
-npm run test:fundly:headed
+pnpm run test:fundly:headed
 
 # Save extracted data to database
-npm run save-lead
+pnpm run save-lead
 ```
 
 ### Database Operations
+
 ```bash
 # Run a specific migration
-npm run run-migration src/database/migrations/001_add_looking_for_columns.sql
+pnpm run run-migration src/database/migrations/001_add_looking_for_columns.sql
 
 # Save specific JSON file to database
-npm run save-lead data/extracted-lead-data.json
+pnpm run save-lead data/extracted-lead-data.json
 ```
 
 ## Database Schema
 
 The `fundly_leads` table includes:
+
 - Lead contact information (email, phone)
 - Lead details (location, urgency, industry, etc.)
 - Funding requirements (looking_for_min, looking_for_max)
