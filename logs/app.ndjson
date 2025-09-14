@@ -1,0 +1,5 @@
+{"ts":"2025-09-14T23:46:40.138Z","level":"info","msg":"Run started","runId":"8"}
+{"ts":"2025-09-14T23:46:40.319Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:46:45.009Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:46:45.022Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:46:47.077Z","level":"debug","var":"pipeline.ids","value":["menu-list-:rh:","tabs-:r1v:--tabpanel-0","30267","30266","30264","30265","30263","30262","30261","30260"]}

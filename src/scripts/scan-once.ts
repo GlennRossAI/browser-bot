@@ -67,7 +67,9 @@ async function runOnce() {
     await page.waitForTimeout(2000);
     let leadId: string | null = null;
     const ids = await page.$$eval('div[id]', els => els.map(el => (el as HTMLElement).id).filter(Boolean));
-    const filtered = ids.filter(id => id && id.toLowerCase() !== 'root' && id.length > 4);
+    const candidates = ids.filter(id => id && id.toLowerCase() !== 'root' && !id.startsWith('tabs-') && !id.startsWith('menu-') && !id.startsWith('menu-list-'));
+    const numeric = candidates.filter(id => /^\d+$/.test(id));
+    const filtered = numeric.length ? numeric : candidates;
     if (filtered.length) leadId = filtered[0];
     logVar('pipeline.ids', filtered.slice(0, 10));
     if (!leadId) throw new Error('No pipeline leads visible');
