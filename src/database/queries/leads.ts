@@ -2,13 +2,16 @@ import { query } from '../utils/connection.js';
 import { FundlyLead, FundlyLeadInsert } from '../../types/lead.js';
 
 export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
+  const lookingCombined = (lead.looking_for_min || lead.looking_for_max)
+    ? [lead.looking_for_min, lead.looking_for_max].filter(Boolean).join(' - ')
+    : '';
   const sql = `
     INSERT INTO fundly_leads (
       fundly_id, email, phone, background_info, email_sent_at, created_at,
       can_contact, use_of_funds, location, urgency, time_in_business,
-      bank_account, annual_revenue, industry, looking_for_min, looking_for_max
+      bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max
     ) VALUES (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16
+      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17
     )
     ON CONFLICT (email) DO UPDATE SET
       fundly_id = EXCLUDED.fundly_id,
@@ -23,6 +26,7 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       bank_account = EXCLUDED.bank_account,
       annual_revenue = EXCLUDED.annual_revenue,
       industry = EXCLUDED.industry,
+      looking_for = EXCLUDED.looking_for,
       looking_for_min = EXCLUDED.looking_for_min,
       looking_for_max = EXCLUDED.looking_for_max,
       created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END
@@ -44,6 +48,7 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     lead.bank_account,
     lead.annual_revenue,
     lead.industry,
+    lookingCombined || null,
     lead.looking_for_min,
     lead.looking_for_max
   ];
