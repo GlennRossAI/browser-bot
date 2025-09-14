@@ -79,11 +79,28 @@ async function runOnce() {
     await page.locator(`div[id="${leadId}"]`).first().click();
     await page.waitForTimeout(800);
 
-    // Reveal contact if needed
-    try {
-      await page.getByRole('button', { name: /Reveal/i }).click({ timeout: 3000 });
-      logMsg('Revealed contact info');
-    } catch { logMsg('No Reveal needed'); }
+    // Reveal contact if needed (robust set of candidates)
+    let revealed = false;
+    const revealCandidates = [
+      page.getByRole('button', { name: /Reveal/i }),
+      page.locator('button:has-text("Reveal Contact")'),
+      page.locator('button:has-text("View Contact")'),
+      page.locator('button.chakra-button:has-text("Reveal")'),
+      page.locator('[data-testid*="reveal"]'),
+    ];
+    for (const cand of revealCandidates) {
+      try {
+        if (await cand.count()) {
+          const el = cand.first();
+          await el.scrollIntoViewIfNeeded().catch(() => {});
+          await el.click({ timeout: 2000 }).catch(() => {});
+          await page.waitForTimeout(600);
+          revealed = true;
+          break;
+        }
+      } catch {}
+    }
+    logMsg(revealed ? 'Revealed contact info' : 'No Reveal needed');
     try {
       const sendCode = page.getByRole('button', { name: /Send Code to Lead/i });
       if (await sendCode.count()) {
