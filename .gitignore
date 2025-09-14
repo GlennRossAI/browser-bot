@@ -1,7 +1,20 @@
 
+# Environment files
+.env
+.env.local
+
 # Playwright
 node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Build output
+dist/
+
+# Data files (optional - remove if you want to track extracted data)
+data/extracted-lead-data.json
+
+# macOS
+.DS_Store
