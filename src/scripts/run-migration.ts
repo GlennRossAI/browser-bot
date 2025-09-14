@@ -36,6 +36,12 @@ async function main() {
   }
 }
 
-if (require.main === module) {
+try {
+  const { pathToFileURL } = await import('url');
+  const invoked = pathToFileURL(process.argv[1]).href;
+  if (import.meta.url === invoked) {
+    main();
+  }
+} catch {
   main();
 }
