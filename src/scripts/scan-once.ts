@@ -97,6 +97,22 @@ async function runOnce() {
     let phoneRaw = (await contactTab.locator('p:text-is("Phone") + p').textContent().catch(() => '')) || '';
     if (!emailRaw) {
       try {
+        const handle = await page.locator('p:has-text("Email")').first();
+        if (await handle.count()) {
+          emailRaw = await handle.evaluate((el: HTMLElement) => (el.nextElementSibling as HTMLElement | null)?.textContent || '');
+        }
+      } catch {}
+    }
+    if (!phoneRaw) {
+      try {
+        const handle = await page.locator('p:has-text("Phone")').first();
+        if (await handle.count()) {
+          phoneRaw = await handle.evaluate((el: HTMLElement) => (el.nextElementSibling as HTMLElement | null)?.textContent || '');
+        }
+      } catch {}
+    }
+    if (!emailRaw) {
+      try {
         const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href');
         if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0];
       } catch {}

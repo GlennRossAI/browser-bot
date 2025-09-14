@@ -19,3 +19,23 @@
 {"ts":"2025-09-14T23:49:50.898Z","level":"debug","var":"feed.addButtons.count","value":0}
 {"ts":"2025-09-14T23:49:52.956Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
 {"ts":"2025-09-14T23:49:56.834Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-14T23:50:14.484Z","level":"info","msg":"Run started","runId":"11"}
+{"ts":"2025-09-14T23:50:14.637Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:50:19.116Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:50:19.124Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:50:21.188Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:50:25.033Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-14T23:50:56.857Z","level":"debug","var":"contact.raw","value":{"emailRaw":"","phoneRaw":""}}
+{"ts":"2025-09-14T23:50:56.921Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:50:57.154Z","level":"debug","var":"db.savedLead","value":{"id":1566,"email":"","fundly_id":"30267"}}
+{"ts":"2025-09-14T23:50:57.212Z","level":"info","msg":"Run finished","runId":"10","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-14T23:51:08.366Z","level":"info","msg":"Run started","runId":"12"}
+{"ts":"2025-09-14T23:51:08.537Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:51:12.181Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:51:12.189Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:51:14.364Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:51:18.199Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-14T23:52:25.048Z","level":"debug","var":"contact.raw","value":{"emailRaw":"","phoneRaw":""}}
+{"ts":"2025-09-14T23:52:25.074Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:52:25.081Z","level":"info","msg":"Skipping DB insert: missing email","fundly_id":"30267"}
+{"ts":"2025-09-14T23:52:25.281Z","level":"info","msg":"Run finished","runId":"11","discovered":1,"saved":0,"emailed":0}
