@@ -89,3 +89,53 @@
 {"ts":"2025-09-14T23:56:18.905Z","level":"debug","var":"feed.addButtons.count","value":0}
 {"ts":"2025-09-14T23:56:21.185Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
 {"ts":"2025-09-14T23:56:25.033Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-14T23:56:36.025Z","level":"info","msg":"Run started","runId":"18"}
+{"ts":"2025-09-14T23:56:36.160Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:56:41.279Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:56:41.288Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:56:43.358Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:56:46.838Z","level":"info","msg":"Revealed contact info"}
+{"ts":"2025-09-14T23:57:25.056Z","level":"debug","var":"contact.raw","value":{"emailRaw":"nevaGonna@giveyou.up","emailSanitized":null,"phoneRaw":"+1 (555) 867-5309"}}
+{"ts":"2025-09-14T23:57:25.173Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:57:25.179Z","level":"info","msg":"Skipping DB insert: missing email","fundly_id":"30267"}
+{"ts":"2025-09-14T23:57:25.474Z","level":"info","msg":"Run finished","runId":"17","discovered":1,"saved":0,"emailed":0}
+{"ts":"2025-09-14T23:57:36.633Z","level":"info","msg":"Run started","runId":"19"}
+{"ts":"2025-09-14T23:57:36.810Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:57:41.572Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:57:41.580Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:57:43.839Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:57:46.863Z","level":"debug","var":"contact.raw","value":{"emailRaw":"nevaGonna@giveyou.up","emailSanitized":null,"phoneRaw":"+1 (555) 867-5309"}}
+{"ts":"2025-09-14T23:57:46.878Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:57:46.884Z","level":"info","msg":"Skipping DB insert: missing email","fundly_id":"30267"}
+{"ts":"2025-09-14T23:57:47.005Z","level":"info","msg":"Run finished","runId":"18","discovered":1,"saved":0,"emailed":0}
+{"ts":"2025-09-14T23:57:47.434Z","level":"info","msg":"Revealed contact info"}
+{"ts":"2025-09-14T23:57:54.788Z","level":"info","msg":"Run started","runId":"20"}
+{"ts":"2025-09-14T23:57:54.923Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:57:58.997Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:57:59.008Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:58:01.075Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:58:04.529Z","level":"info","msg":"Revealed contact info"}
+{"ts":"2025-09-14T23:58:47.456Z","level":"debug","var":"contact.raw","value":{"emailRaw":"nevaGonna@giveyou.up","emailSanitized":null,"phoneRaw":"+1 (555) 867-5309"}}
+{"ts":"2025-09-14T23:58:47.545Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:58:47.553Z","level":"info","msg":"Skipping DB insert: missing email","fundly_id":"30267"}
+{"ts":"2025-09-14T23:58:47.779Z","level":"info","msg":"Run finished","runId":"19","discovered":1,"saved":0,"emailed":0}
+{"ts":"2025-09-14T23:58:58.912Z","level":"info","msg":"Run started","runId":"21"}
+{"ts":"2025-09-14T23:58:59.088Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:59:03.341Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:59:03.348Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:59:04.555Z","level":"debug","var":"contact.raw","value":{"emailRaw":"nevaGonna@giveyou.up","emailSanitized":null,"phoneRaw":"+1 (555) 867-5309"}}
+{"ts":"2025-09-14T23:59:04.576Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-14T23:59:04.582Z","level":"info","msg":"Skipping DB insert: missing email","fundly_id":"30267"}
+{"ts":"2025-09-14T23:59:04.702Z","level":"info","msg":"Run finished","runId":"20","discovered":1,"saved":0,"emailed":0}
+{"ts":"2025-09-14T23:59:05.432Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:59:09.055Z","level":"info","msg":"Revealed contact info"}
+{"ts":"2025-09-14T23:59:18.310Z","level":"debug","var":"contact.raw","value":{"emailRaw":"","emailSanitized":null,"phoneRaw":""}}
+{"ts":"2025-09-14T23:59:18.310Z","level":"debug","var":"background.len","value":0}
+{"ts":"2025-09-14T23:59:18.314Z","level":"info","msg":"Skipping DB insert: missing email","fundly_id":"30267"}
+{"ts":"2025-09-14T23:59:18.453Z","level":"info","msg":"Run finished","runId":"21","discovered":1,"saved":0,"emailed":0}
+{"ts":"2025-09-14T23:59:19.614Z","level":"info","msg":"Run started","runId":"22"}
+{"ts":"2025-09-14T23:59:19.770Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-14T23:59:25.298Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-14T23:59:25.307Z","level":"debug","var":"feed.addButtons.count","value":0}
+{"ts":"2025-09-14T23:59:27.342Z","level":"debug","var":"pipeline.ids","value":["30267","30266","30264","30265","30263","30262","30261","30260","30259","30258"]}
+{"ts":"2025-09-14T23:59:30.901Z","level":"info","msg":"Revealed contact info"}

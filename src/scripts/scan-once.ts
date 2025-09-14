@@ -50,18 +50,31 @@ async function runOnce() {
     await page.waitForSelector('text="Realtime Lead Timeline"', { timeout: 10000 }).catch(() => {});
     logMsg('Signed in and on dashboard');
 
-    // Try to add the newest to pipeline
-    const addButtons = await page.$$('button[label="Add to My Pipeline"], button:has-text("Add to My Pipeline")');
-    logVar('feed.addButtons.count', addButtons.length);
-    if (addButtons.length > 0) {
-      try {
-        const containerHandle = await addButtons[0].evaluateHandle((btn) => (btn as HTMLElement).closest('div[id]'));
-        const possibleId = await (containerHandle as any).evaluate((el: HTMLElement | null) => el?.id || null);
-        logVar('feed.candidateLeadId', possibleId);
-        await addButtons[0].click();
-        await page.waitForTimeout(1500);
-      } catch (e) { logError(e, { step: 'click-add' }); }
+    // Try to add several visible leads to pipeline (scrolling)
+    async function addNewLeads(): Promise<number> {
+      const addButtons = page.getByRole('button', { name: /Add to My Pipeline/i });
+      async function processAllVisible() {
+        let clicked = 0;
+        for (let attempts = 0; attempts < 50; attempts++) {
+          const count = await addButtons.count().catch(() => 0);
+          if (!count) break;
+          await addButtons.first().click({ timeout: 5000 }).catch(() => {});
+          clicked++;
+          await page.waitForTimeout(600);
+        }
+        return clicked;
+      }
+      let total = 0;
+      total += await processAllVisible();
+      for (let s = 0; s < 4; s++) {
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)).catch(() => {});
+        await page.waitForTimeout(800);
+        total += await processAllVisible();
+      }
+      return total;
     }
+    const addedCount = await addNewLeads().catch(() => 0);
+    logVar('feed.addedToPipeline', addedCount);
 
     // Go to pipeline and pick first lead
     await page.getByRole('link', { name: 'My Pipeline' }).click();

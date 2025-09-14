@@ -78,3 +78,59 @@
   '30259', '30258'
 ]
 [INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] background.len 134
+[INFO] Skipping DB insert: missing email { fundly_id: '30267' }
+[INFO] Run finished { runId: '17', discovered: 1, saved: 0, emailed: 0 }
+[INFO] Run started { runId: '19' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addButtons.count 0
+[DBG] pipeline.ids [
+  '30267', '30266',
+  '30264', '30265',
+  '30263', '30262',
+  '30261', '30260',
+  '30259', '30258'
+]
+[INFO] Revealed contact info 
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] background.len 134
+[INFO] Skipping DB insert: missing email { fundly_id: '30267' }
+[INFO] Run finished { runId: '19', discovered: 1, saved: 0, emailed: 0 }
+[INFO] Run started { runId: '21' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addButtons.count 0
+[DBG] pipeline.ids [
+  '30267', '30266',
+  '30264', '30265',
+  '30263', '30262',
+  '30261', '30260',
+  '30259', '30258'
+]
+[INFO] Revealed contact info 
+[DBG] contact.raw { emailRaw: '', emailSanitized: null, phoneRaw: '' }
+[DBG] background.len 0
+[INFO] Skipping DB insert: missing email { fundly_id: '30267' }
+[INFO] Run finished { runId: '21', discovered: 1, saved: 0, emailed: 0 }
+[INFO] Run started { runId: '22' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addButtons.count 0
+[DBG] pipeline.ids [
+  '30267', '30266',
+  '30264', '30265',
+  '30263', '30262',
+  '30261', '30260',
+  '30259', '30258'
+]
+[INFO] Revealed contact info 
