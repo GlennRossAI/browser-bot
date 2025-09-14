@@ -14,7 +14,6 @@ export interface FundlyLead {
   bank_account: string;
   annual_revenue: string;
   industry: string;
-  looking_for?: string; // Legacy field
   looking_for_min: string;
   looking_for_max: string;
 }
