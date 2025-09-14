@@ -133,7 +133,13 @@ async function runOnce() {
   }
 }
 
-if (require.main === module) {
+try {
+  const { pathToFileURL } = await import('url');
+  const invoked = pathToFileURL(process.argv[1]).href;
+  if (import.meta.url === invoked) {
+    runOnce().catch((e) => { console.error(e); process.exit(1); });
+  }
+} catch {
+  // Older Node or unusual env; just run
   runOnce().catch((e) => { console.error(e); process.exit(1); });
 }
-
