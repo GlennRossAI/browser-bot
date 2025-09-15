@@ -13,6 +13,19 @@ export interface RunLog {
 }
 
 export async function startRun(details?: any): Promise<RunLog> {
+  // Auto-close any previously open run (best-effort)
+  try {
+    await query(
+      `UPDATE browser_bot_run_logs
+       SET ended_at = COALESCE(ended_at, now()),
+           status = COALESCE(status, 'failure'),
+           error_message = COALESCE(error_message, 'auto-closed: previous run not finalized')
+       WHERE id IN (
+         SELECT id FROM browser_bot_run_logs WHERE ended_at IS NULL ORDER BY id DESC LIMIT 1
+       );`
+    );
+  } catch {}
+
   const sql = `
     INSERT INTO browser_bot_run_logs (details)
     VALUES ($1)
@@ -48,4 +61,3 @@ export async function finishRun(id: number, patch: Partial<Omit<RunLog, 'id' | '
   ]);
   return res.rows[0] as RunLog;
 }
-

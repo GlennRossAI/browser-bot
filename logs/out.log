@@ -1704,3 +1704,500 @@
 [INFO] Run started { runId: '99' }
 [DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
 [INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '99', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '100' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '100', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '101' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '101', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '102' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '102', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '103' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '103', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '104' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '104', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '105' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '105', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '106' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '106', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '107' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '107', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '108' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '108', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '109' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '109', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '110' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '110', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '111' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '111', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '112' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '112', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '113' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '113', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '114' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '114', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '115' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '115', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '116' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '116', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '117' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '117', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '118' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '118', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '119' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '119', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '120' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '120', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '121' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '121', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '122' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '122', discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started { runId: '123' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30268', '30267',
+  '30266', '30264',
+  '30265', '30263',
+  '30262', '30261',
+  '30260', '30259'
+]
+[INFO] No Reveal needed 
+[DBG] contact.raw {
+  emailRaw: 'f.cortez.80eight@gmail.com',
+  emailSanitized: 'f.cortez.80eight@gmail.com',
+  phoneRaw: '+18084949584'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 1577, email: 'f.cortez.80eight@gmail.com', fundly_id: '30268' }
+[INFO] Run finished { runId: '123', discovered: 1, saved: 1, emailed: 0 }

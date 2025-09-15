@@ -225,8 +225,8 @@ async function runOnce() {
     await finishRun(run.id, { status: 'failure', discovered_count: discovered, saved_count: saved, emailed_count: emailed, error_message: msg });
     throw error;
   } finally {
-    await browser.close();
-    await closePool();
+    try { await browser.close(); } catch {}
+    try { await closePool(); } catch {}
   }
 }
 
@@ -240,3 +240,23 @@ try {
   // Older Node or unusual env; just run
   runOnce().catch((e) => { console.error(e); process.exit(1); });
 }
+
+// Ensure we finalize an open run on unexpected crashes
+let lastRunId: number | null = null;
+// Wrap startRun to capture id
+const _startRunRef = startRun;
+// @ts-ignore - monkey-patch for crash handler context
+startRun = async (...args: any[]) => {
+  const r = await _startRunRef.apply(null, args as any);
+  try { lastRunId = (r as any).id ?? null; } catch {};
+  return r;
+};
+
+async function finalizeOnCrash(reason: any) {
+  if (lastRunId) {
+    try { await finishRun(lastRunId, { status: 'failure', error_message: String(reason || 'process crash') }); }
+    catch {}
+  }
+}
+process.on('uncaughtException', finalizeOnCrash);
+process.on('unhandledRejection', finalizeOnCrash);
