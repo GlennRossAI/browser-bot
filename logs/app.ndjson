@@ -416,3 +416,552 @@
 {"ts":"2025-09-15T00:22:43.730Z","level":"debug","var":"background.len","value":134}
 {"ts":"2025-09-15T00:22:43.867Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
 {"ts":"2025-09-15T00:22:43.935Z","level":"info","msg":"Run finished","runId":"48","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:22:55.052Z","level":"info","msg":"Run started","runId":"49"}
+{"ts":"2025-09-15T00:22:55.213Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:22:59.983Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:23:07.667Z","level":"debug","var":"feed.addedToPipeline","value":2}
+{"ts":"2025-09-15T00:23:09.800Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:23:10.704Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:23:10.742Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:23:11.958Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:23:12.043Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:23:12.188Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:23:12.239Z","level":"info","msg":"Run finished","runId":"49","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:23:23.575Z","level":"info","msg":"Run started","runId":"50"}
+{"ts":"2025-09-15T00:23:23.779Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:23:28.030Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:23:31.297Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:23:33.402Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:23:34.278Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:23:34.288Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:23:35.501Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:23:35.565Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:23:35.691Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:23:35.748Z","level":"info","msg":"Run finished","runId":"50","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:23:46.824Z","level":"info","msg":"Run started","runId":"51"}
+{"ts":"2025-09-15T00:23:46.970Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:23:51.613Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:23:59.460Z","level":"debug","var":"feed.addedToPipeline","value":2}
+{"ts":"2025-09-15T00:24:01.597Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:24:02.513Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:24:02.565Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:24:03.774Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:24:03.826Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:24:03.971Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:24:04.028Z","level":"info","msg":"Run finished","runId":"51","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:24:15.080Z","level":"info","msg":"Run started","runId":"52"}
+{"ts":"2025-09-15T00:24:15.234Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:24:19.794Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:24:28.281Z","level":"debug","var":"feed.addedToPipeline","value":2}
+{"ts":"2025-09-15T00:24:30.337Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:24:31.194Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:24:31.293Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:24:32.509Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:24:32.603Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:24:32.739Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:24:32.793Z","level":"info","msg":"Run finished","runId":"52","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:24:43.862Z","level":"info","msg":"Run started","runId":"53"}
+{"ts":"2025-09-15T00:24:44.012Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:24:48.673Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:25:00.069Z","level":"debug","var":"feed.addedToPipeline","value":4}
+{"ts":"2025-09-15T00:25:02.191Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:25:03.070Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:25:03.129Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:25:04.346Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:25:04.398Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:25:04.530Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:25:04.594Z","level":"info","msg":"Run finished","runId":"53","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:25:15.682Z","level":"info","msg":"Run started","runId":"54"}
+{"ts":"2025-09-15T00:25:15.828Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:25:21.370Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:25:24.639Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:25:26.733Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:25:27.599Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:25:27.691Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:25:28.908Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:25:28.995Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:25:29.234Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:25:29.297Z","level":"info","msg":"Run finished","runId":"54","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:25:40.380Z","level":"info","msg":"Run started","runId":"55"}
+{"ts":"2025-09-15T00:25:40.542Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:25:45.735Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:25:49.029Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:25:51.157Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:25:52.115Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:25:52.308Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:25:53.524Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:25:53.654Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:25:53.790Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:25:53.842Z","level":"info","msg":"Run finished","runId":"55","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:26:04.910Z","level":"info","msg":"Run started","runId":"56"}
+{"ts":"2025-09-15T00:26:05.058Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:26:09.679Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:26:19.629Z","level":"debug","var":"feed.addedToPipeline","value":3}
+{"ts":"2025-09-15T00:26:21.811Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:26:22.736Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:26:22.939Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:26:24.158Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:26:24.305Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:26:24.445Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:26:24.495Z","level":"info","msg":"Run finished","runId":"56","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:26:35.563Z","level":"info","msg":"Run started","runId":"57"}
+{"ts":"2025-09-15T00:26:35.712Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:26:40.301Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:26:47.232Z","level":"debug","var":"feed.addedToPipeline","value":2}
+{"ts":"2025-09-15T00:26:49.388Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:26:50.360Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:26:50.390Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:26:51.609Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:26:51.717Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:26:51.883Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:26:51.931Z","level":"info","msg":"Run finished","runId":"57","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:27:02.996Z","level":"info","msg":"Run started","runId":"58"}
+{"ts":"2025-09-15T00:27:03.155Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:27:07.316Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:27:14.718Z","level":"debug","var":"feed.addedToPipeline","value":2}
+{"ts":"2025-09-15T00:27:16.852Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:27:17.821Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:27:17.876Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:27:17.972Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:27:18.095Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:27:18.148Z","level":"info","msg":"Run finished","runId":"58","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:27:29.232Z","level":"info","msg":"Run started","runId":"59"}
+{"ts":"2025-09-15T00:27:29.387Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:27:34.046Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:27:37.322Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:27:39.481Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:27:40.329Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:27:40.542Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:27:41.762Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:27:41.786Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:27:41.926Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:27:41.977Z","level":"info","msg":"Run finished","runId":"59","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:27:53.045Z","level":"info","msg":"Run started","runId":"60"}
+{"ts":"2025-09-15T00:27:53.196Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:27:57.992Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:28:01.287Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:28:03.349Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:28:04.296Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:28:04.351Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:28:05.570Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:28:05.685Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:28:05.827Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:28:05.881Z","level":"info","msg":"Run finished","runId":"60","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:28:16.974Z","level":"info","msg":"Run started","runId":"61"}
+{"ts":"2025-09-15T00:28:17.130Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:28:21.250Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:28:24.524Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:28:26.621Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:28:27.540Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:28:27.687Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:28:28.905Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:28:28.993Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:28:29.144Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:28:29.196Z","level":"info","msg":"Run finished","runId":"61","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:28:40.292Z","level":"info","msg":"Run started","runId":"62"}
+{"ts":"2025-09-15T00:28:40.450Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:28:45.310Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:28:48.599Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:28:50.752Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:28:51.715Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:28:51.791Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:28:53.011Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:28:53.041Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:28:53.181Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:28:53.237Z","level":"info","msg":"Run finished","runId":"62","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:29:04.290Z","level":"info","msg":"Run started","runId":"63"}
+{"ts":"2025-09-15T00:29:04.438Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:29:09.027Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:29:12.320Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:29:14.511Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:29:15.358Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:29:15.464Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:29:16.677Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:29:16.701Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:29:16.827Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:29:16.883Z","level":"info","msg":"Run finished","runId":"63","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:29:28.053Z","level":"info","msg":"Run started","runId":"64"}
+{"ts":"2025-09-15T00:29:28.218Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:29:33.045Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:29:36.334Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:29:38.480Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:29:39.460Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:29:39.619Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:29:40.836Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:29:40.917Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:29:41.063Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:29:41.122Z","level":"info","msg":"Run finished","runId":"64","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:29:52.195Z","level":"info","msg":"Run started","runId":"65"}
+{"ts":"2025-09-15T00:29:52.327Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:29:55.990Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:29:59.267Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:30:01.377Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:30:02.369Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:30:02.481Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:30:03.699Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:30:03.892Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:30:04.023Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:30:04.077Z","level":"info","msg":"Run finished","runId":"65","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:30:15.171Z","level":"info","msg":"Run started","runId":"66"}
+{"ts":"2025-09-15T00:30:15.323Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:30:20.079Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:30:23.350Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:30:25.615Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:30:26.559Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:30:26.644Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:30:27.863Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:30:27.989Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:30:28.218Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:30:28.271Z","level":"info","msg":"Run finished","runId":"66","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:30:39.341Z","level":"info","msg":"Run started","runId":"67"}
+{"ts":"2025-09-15T00:30:39.485Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:30:43.697Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:30:46.973Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:30:49.026Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:30:50.009Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:30:50.117Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:30:51.333Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:30:51.395Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:30:51.525Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:30:51.579Z","level":"info","msg":"Run finished","runId":"67","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:31:02.637Z","level":"info","msg":"Run started","runId":"68"}
+{"ts":"2025-09-15T00:31:02.785Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:31:07.532Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:31:10.812Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:31:12.958Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:31:13.935Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:31:14.003Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:31:15.216Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:31:15.298Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:31:15.446Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:31:15.500Z","level":"info","msg":"Run finished","runId":"68","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:31:26.573Z","level":"info","msg":"Run started","runId":"69"}
+{"ts":"2025-09-15T00:31:26.728Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:31:31.009Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:31:34.281Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:31:36.390Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:31:37.319Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:31:37.335Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:31:38.552Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:31:38.655Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:31:38.792Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:31:38.856Z","level":"info","msg":"Run finished","runId":"69","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:31:50.044Z","level":"info","msg":"Run started","runId":"70"}
+{"ts":"2025-09-15T00:31:50.223Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:31:54.367Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:31:57.653Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:31:59.826Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:32:00.762Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:32:00.892Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:32:02.107Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:32:02.225Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:32:02.353Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:32:02.409Z","level":"info","msg":"Run finished","runId":"70","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:32:13.490Z","level":"info","msg":"Run started","runId":"71"}
+{"ts":"2025-09-15T00:32:13.644Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:32:18.418Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:32:21.719Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:32:23.809Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:32:24.760Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:32:24.974Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:32:26.191Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:32:26.299Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:32:26.436Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:32:26.498Z","level":"info","msg":"Run finished","runId":"71","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:32:37.583Z","level":"info","msg":"Run started","runId":"72"}
+{"ts":"2025-09-15T00:32:37.741Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:32:42.622Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:32:45.921Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:32:48.112Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:32:49.017Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:32:49.080Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:32:50.299Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:32:50.325Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:32:50.464Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:32:50.517Z","level":"info","msg":"Run finished","runId":"72","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:33:01.636Z","level":"info","msg":"Run started","runId":"73"}
+{"ts":"2025-09-15T00:33:01.803Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:33:06.352Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:33:09.647Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:33:11.788Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:33:12.722Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:33:12.745Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:33:13.961Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:33:14.005Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:33:14.233Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:33:14.286Z","level":"info","msg":"Run finished","runId":"73","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:33:25.365Z","level":"info","msg":"Run started","runId":"74"}
+{"ts":"2025-09-15T00:33:25.523Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:33:30.215Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:33:33.500Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:33:35.708Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:33:36.636Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:33:36.721Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:33:36.837Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:33:36.982Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:33:37.039Z","level":"info","msg":"Run finished","runId":"74","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:33:48.112Z","level":"info","msg":"Run started","runId":"75"}
+{"ts":"2025-09-15T00:33:48.260Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:33:52.985Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:33:56.339Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:33:58.530Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:33:59.394Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:33:59.550Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:34:00.766Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:34:00.805Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:34:01.021Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:34:01.082Z","level":"info","msg":"Run finished","runId":"75","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:34:12.145Z","level":"info","msg":"Run started","runId":"76"}
+{"ts":"2025-09-15T00:34:12.304Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:34:17.013Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:34:20.292Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:34:22.476Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:34:23.348Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:34:23.504Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:34:24.724Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:34:24.774Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:34:24.909Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:34:24.961Z","level":"info","msg":"Run finished","runId":"76","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:34:36.149Z","level":"info","msg":"Run started","runId":"77"}
+{"ts":"2025-09-15T00:34:36.319Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:34:41.024Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:34:44.294Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:34:46.429Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:34:47.280Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:34:47.396Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:34:48.611Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:34:48.647Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:34:48.778Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:34:48.831Z","level":"info","msg":"Run finished","runId":"77","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:34:59.897Z","level":"info","msg":"Run started","runId":"78"}
+{"ts":"2025-09-15T00:35:00.043Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:35:04.803Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:35:08.078Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:35:10.130Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:35:11.129Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:35:11.336Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:35:12.556Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:35:12.618Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:35:12.763Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:35:12.819Z","level":"info","msg":"Run finished","runId":"78","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:35:23.900Z","level":"info","msg":"Run started","runId":"79"}
+{"ts":"2025-09-15T00:35:24.060Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:35:29.063Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:35:32.317Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:35:34.401Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:35:35.325Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:35:35.442Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:35:36.658Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:35:36.689Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:35:36.825Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:35:36.882Z","level":"info","msg":"Run finished","runId":"79","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:35:48.017Z","level":"info","msg":"Run started","runId":"80"}
+{"ts":"2025-09-15T00:35:48.176Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:35:52.270Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:35:55.538Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:35:57.623Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:35:58.489Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:35:58.574Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:35:59.784Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:35:59.860Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:35:59.992Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:36:00.048Z","level":"info","msg":"Run finished","runId":"80","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:36:11.161Z","level":"info","msg":"Run started","runId":"81"}
+{"ts":"2025-09-15T00:36:11.301Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:36:15.516Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:36:18.808Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:36:20.965Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:36:21.853Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:36:21.893Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:36:23.108Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:36:23.128Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:36:23.257Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:36:23.309Z","level":"info","msg":"Run finished","runId":"81","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:36:34.417Z","level":"info","msg":"Run started","runId":"82"}
+{"ts":"2025-09-15T00:36:34.567Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:36:39.296Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:36:42.576Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:36:44.743Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:36:45.670Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:36:45.745Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:36:46.966Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:36:47.013Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:36:47.161Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:36:47.214Z","level":"info","msg":"Run finished","runId":"82","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:36:58.293Z","level":"info","msg":"Run started","runId":"83"}
+{"ts":"2025-09-15T00:36:58.455Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:37:02.562Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:37:05.837Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:37:07.892Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:37:08.847Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:37:08.893Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:37:10.106Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:37:10.126Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:37:10.265Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:37:10.318Z","level":"info","msg":"Run finished","runId":"83","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:37:21.369Z","level":"info","msg":"Run started","runId":"84"}
+{"ts":"2025-09-15T00:37:21.510Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:37:25.079Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:37:28.337Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:37:30.397Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:37:31.287Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:37:31.414Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:37:32.632Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:37:32.679Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:37:32.813Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:37:32.881Z","level":"info","msg":"Run finished","runId":"84","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:37:43.913Z","level":"info","msg":"Run started","runId":"85"}
+{"ts":"2025-09-15T00:37:44.072Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:37:48.265Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:37:51.548Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:37:53.636Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:37:54.503Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:37:54.558Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:37:55.768Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:37:55.802Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:37:55.932Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:37:55.989Z","level":"info","msg":"Run finished","runId":"85","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:38:07.190Z","level":"info","msg":"Run started","runId":"86"}
+{"ts":"2025-09-15T00:38:07.345Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:38:11.592Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:38:14.868Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:38:16.936Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:38:17.787Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:38:17.849Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:38:17.946Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:38:18.081Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:38:18.133Z","level":"info","msg":"Run finished","runId":"86","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:38:29.310Z","level":"info","msg":"Run started","runId":"87"}
+{"ts":"2025-09-15T00:38:29.495Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:38:33.788Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:38:37.065Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:38:39.129Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:38:40.026Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:38:40.116Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:38:40.211Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:38:40.432Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:38:40.490Z","level":"info","msg":"Run finished","runId":"87","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:38:51.547Z","level":"info","msg":"Run started","runId":"88"}
+{"ts":"2025-09-15T00:38:51.709Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:38:56.399Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:38:59.685Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:39:01.789Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:39:02.714Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:39:02.855Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:39:04.083Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:39:04.107Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:39:04.231Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:39:04.279Z","level":"info","msg":"Run finished","runId":"88","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:39:15.413Z","level":"info","msg":"Run started","runId":"89"}
+{"ts":"2025-09-15T00:39:15.571Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:39:19.714Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:39:23.000Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:39:25.050Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:39:25.907Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:39:26.088Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:39:27.297Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:39:27.336Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:39:27.548Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:39:27.600Z","level":"info","msg":"Run finished","runId":"89","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:39:38.677Z","level":"info","msg":"Run started","runId":"90"}
+{"ts":"2025-09-15T00:39:38.849Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:39:43.474Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:39:46.748Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:39:48.877Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:39:49.748Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:39:49.817Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:39:51.032Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:39:51.051Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:39:51.175Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:39:51.223Z","level":"info","msg":"Run finished","runId":"90","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:40:02.304Z","level":"info","msg":"Run started","runId":"91"}
+{"ts":"2025-09-15T00:40:02.465Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:40:07.270Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:40:10.556Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:40:12.659Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:40:13.532Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:40:13.588Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:40:14.810Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:40:14.900Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:40:15.035Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:40:15.087Z","level":"info","msg":"Run finished","runId":"91","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:40:26.218Z","level":"info","msg":"Run started","runId":"92"}
+{"ts":"2025-09-15T00:40:26.380Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:40:31.067Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:40:34.337Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:40:36.455Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:40:37.346Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:40:37.366Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:40:38.583Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:40:38.668Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:40:38.803Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:40:38.855Z","level":"info","msg":"Run finished","runId":"92","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:40:50.068Z","level":"info","msg":"Run started","runId":"93"}
+{"ts":"2025-09-15T00:40:50.253Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:40:54.899Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:40:58.190Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:41:00.311Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:41:01.161Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:41:01.278Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:41:02.496Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:41:02.513Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:41:02.642Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:41:02.690Z","level":"info","msg":"Run finished","runId":"93","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:41:13.747Z","level":"info","msg":"Run started","runId":"94"}
+{"ts":"2025-09-15T00:41:13.943Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:41:18.652Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:41:21.907Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:41:24.053Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:41:24.942Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:41:25.028Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:41:26.244Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:41:26.264Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:41:26.398Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:41:26.454Z","level":"info","msg":"Run finished","runId":"94","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:41:37.552Z","level":"info","msg":"Run started","runId":"95"}
+{"ts":"2025-09-15T00:41:37.703Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:41:41.369Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:41:44.646Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:41:46.777Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:41:47.628Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:41:47.675Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:41:48.896Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:41:48.984Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:41:49.119Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:41:49.172Z","level":"info","msg":"Run finished","runId":"95","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:42:00.224Z","level":"info","msg":"Run started","runId":"96"}
+{"ts":"2025-09-15T00:42:00.390Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:42:04.392Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:42:07.657Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:42:09.720Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:42:10.626Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:42:10.666Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:42:11.883Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:42:11.960Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:42:12.188Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:42:12.239Z","level":"info","msg":"Run finished","runId":"96","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:42:23.364Z","level":"info","msg":"Run started","runId":"97"}
+{"ts":"2025-09-15T00:42:23.537Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:42:28.257Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:42:31.533Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:42:33.693Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:42:34.617Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:42:34.682Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:42:35.900Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:42:35.950Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:42:36.077Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:42:36.131Z","level":"info","msg":"Run finished","runId":"97","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:42:47.230Z","level":"info","msg":"Run started","runId":"98"}
+{"ts":"2025-09-15T00:42:47.380Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:42:51.635Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:42:54.925Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:42:57.082Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:42:57.986Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:42:58.094Z","level":"info","msg":"Clicked Send Code to Lead"}
+{"ts":"2025-09-15T00:42:59.310Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:42:59.398Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:42:59.541Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:42:59.592Z","level":"info","msg":"Run finished","runId":"98","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:43:10.812Z","level":"info","msg":"Run started","runId":"99"}
+{"ts":"2025-09-15T00:43:10.982Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:43:16.288Z","level":"info","msg":"Signed in and on dashboard"}

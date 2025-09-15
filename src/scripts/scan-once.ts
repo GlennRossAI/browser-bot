@@ -114,14 +114,15 @@ async function runOnce() {
       } catch {}
     }
     logMsg(revealed ? 'Revealed contact info' : 'No Reveal needed');
-    try {
-      const sendCode = page.getByRole('button', { name: /Send Code to Lead/i });
-      if (await sendCode.count()) {
-        await sendCode.first().click({ timeout: 3000 });
-        logMsg('Clicked Send Code to Lead');
-        await page.waitForTimeout(1200);
-      }
-    } catch (e) { logError(e, { step: 'send-code' }); }
+      // Disabled by request: do not click "Send Code to Lead"
+      // try {
+      //   const sendCode = page.getByRole('button', { name: /Send Code to Lead/i });
+      //   if (await sendCode.count()) {
+      //     await sendCode.first().click({ timeout: 3000 });
+      //     logMsg('Clicked Send Code to Lead');
+      //     await page.waitForTimeout(1200);
+      //   }
+      // } catch (e) { logError(e, { step: 'send-code' }); }
 
     const contactTab = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
     let emailRaw = (await contactTab.locator('p:text-is("Email") + p').textContent().catch(() => '')) || '';
