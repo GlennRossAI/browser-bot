@@ -1212,3 +1212,87 @@
 {"ts":"2025-09-15T00:52:17.182Z","level":"debug","var":"background.len","value":134}
 {"ts":"2025-09-15T00:52:17.322Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
 {"ts":"2025-09-15T00:52:17.384Z","level":"info","msg":"Run finished","runId":"123","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:56:50.139Z","level":"info","msg":"Run started","runId":"124"}
+{"ts":"2025-09-15T00:56:50.311Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:56:55.331Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:56:57.201Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:56:58.314Z","level":"info","msg":"Run started","runId":"125"}
+{"ts":"2025-09-15T00:56:58.470Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:57:03.247Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:57:06.517Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:57:08.614Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:57:09.519Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:57:09.523Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:57:09.574Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:57:09.713Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:57:09.764Z","level":"info","msg":"Run finished","runId":"125","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:57:20.884Z","level":"info","msg":"Run started","runId":"126"}
+{"ts":"2025-09-15T00:57:21.042Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:57:25.816Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:57:29.086Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:57:31.252Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:57:32.139Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:57:32.265Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:57:32.410Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:57:32.549Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:57:32.605Z","level":"info","msg":"Run finished","runId":"126","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:57:39.675Z","level":"info","msg":"Run started","runId":"127"}
+{"ts":"2025-09-15T00:57:39.834Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:57:43.982Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:57:47.282Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:57:49.363Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:57:50.293Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:57:50.301Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:57:50.370Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:57:50.496Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:57:50.545Z","level":"info","msg":"Run finished","runId":"127","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:58:01.590Z","level":"info","msg":"Run started","runId":"128"}
+{"ts":"2025-09-15T00:58:01.761Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:58:06.470Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:58:09.753Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:58:11.868Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:58:12.739Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:58:12.743Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:58:12.833Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:58:12.966Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:58:13.017Z","level":"info","msg":"Run finished","runId":"128","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:58:24.206Z","level":"info","msg":"Run started","runId":"129"}
+{"ts":"2025-09-15T00:58:24.360Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:58:29.127Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:58:32.407Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:58:34.495Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:58:35.383Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:58:35.387Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:58:35.450Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:58:35.576Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:58:35.628Z","level":"info","msg":"Run finished","runId":"129","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:58:46.718Z","level":"info","msg":"Run started","runId":"130"}
+{"ts":"2025-09-15T00:58:46.884Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:58:51.073Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:58:54.355Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:58:56.484Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:58:57.368Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:58:57.372Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:58:57.416Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:58:57.546Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:58:57.599Z","level":"info","msg":"Run finished","runId":"130","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:59:08.719Z","level":"info","msg":"Run started","runId":"131"}
+{"ts":"2025-09-15T00:59:08.879Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:59:13.551Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:59:16.836Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:59:18.972Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:59:19.907Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:59:19.912Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:59:19.938Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:59:20.065Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:59:20.113Z","level":"info","msg":"Run finished","runId":"131","discovered":1,"saved":1,"emailed":0}
+{"ts":"2025-09-15T00:59:31.192Z","level":"info","msg":"Run started","runId":"132"}
+{"ts":"2025-09-15T00:59:31.364Z","level":"debug","var":"env.ready","value":{"hasEmail":true,"hasPass":true,"hasDb":true}}
+{"ts":"2025-09-15T00:59:36.109Z","level":"info","msg":"Signed in and on dashboard"}
+{"ts":"2025-09-15T00:59:39.397Z","level":"debug","var":"feed.addedToPipeline","value":0}
+{"ts":"2025-09-15T00:59:41.542Z","level":"debug","var":"pipeline.ids","value":["30268","30267","30266","30264","30265","30263","30262","30261","30260","30259"]}
+{"ts":"2025-09-15T00:59:42.462Z","level":"info","msg":"No Reveal needed"}
+{"ts":"2025-09-15T00:59:42.468Z","level":"debug","var":"contact.raw","value":{"emailRaw":"f.cortez.80eight@gmail.com","emailSanitized":"f.cortez.80eight@gmail.com","phoneRaw":"+18084949584"}}
+{"ts":"2025-09-15T00:59:42.586Z","level":"debug","var":"background.len","value":134}
+{"ts":"2025-09-15T00:59:42.755Z","level":"debug","var":"db.savedLead","value":{"id":1577,"email":"f.cortez.80eight@gmail.com","fundly_id":"30268"}}
+{"ts":"2025-09-15T00:59:42.817Z","level":"info","msg":"Run finished","runId":"132","discovered":1,"saved":1,"emailed":0}

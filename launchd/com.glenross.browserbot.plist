@@ -24,7 +24,7 @@
     <key>RunAtLoad</key>
     <true/>
     <key>StartInterval</key>
-    <integer>10</integer>
+    <integer>15</integer>
     <key>StandardOutPath</key>
     <string>/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/logs/out.log</string>
     <key>StandardErrorPath</key>
@@ -33,4 +33,3 @@
     <false/>
   </dict>
 </plist>
-

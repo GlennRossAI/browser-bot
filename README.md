@@ -113,9 +113,9 @@ Additional table for run logging:
 - Gmail API: `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REDIRECT_URI`, `GMAIL_REFRESH_TOKEN`, optional `GMAIL_USER_EMAIL`
 - SMTP: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, optional `FROM_EMAIL`, `FROM_NAME`
 
-## LaunchAgent (macOS) — run every 10 seconds
+## LaunchAgent (macOS) — run every 15 seconds
 
-The LaunchAgent is configured at `launchd/com.glenross.browserbot.plist` to run the scan-once script every 10 seconds, headless. It uses the project WorkingDirectory so `.env` is picked up.
+The LaunchAgent is configured at `launchd/com.glenross.browserbot.plist` to run the scan-once script every 15 seconds, headless. It uses the project WorkingDirectory so `.env` is picked up.
 
 ```bash
 mkdir -p ~/Library/LaunchAgents
