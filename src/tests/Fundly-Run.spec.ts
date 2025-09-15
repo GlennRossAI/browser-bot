@@ -71,6 +71,47 @@ test("Extract lead details and fields from Fundly", async ({
 		timeout: 10000,
 	});
 
+	// NEW: Scroll feed and click visible "Add to My Pipeline" buttons (reuse idea from api_bot)
+	// We only augment with scrolling; no other behavioral changes
+	await page.evaluate(async () => {
+		let totalClicked = 0;
+		let scrollCount = 0;
+		const maxScrolls = 4;
+
+		async function waitForButtonChange(button: HTMLButtonElement) {
+			return new Promise<void>((resolve) => {
+				const observer = new MutationObserver(() => {
+					if (button.textContent?.trim() === "View in My Pipeline") {
+						observer.disconnect();
+						resolve();
+					}
+				});
+				observer.observe(button, { childList: true, characterData: true, subtree: true });
+				setTimeout(() => { observer.disconnect(); resolve(); }, 8000);
+			});
+		}
+
+		async function processCurrentButtons() {
+			const buttons = Array.from(document.querySelectorAll('button')) as HTMLButtonElement[];
+			const addButtons = buttons.filter((b) => b.textContent?.trim() === 'Add to My Pipeline');
+			for (const btn of addButtons) {
+				btn.click();
+				totalClicked++;
+				await waitForButtonChange(btn);
+				await new Promise((r) => setTimeout(r, 500));
+			}
+		}
+
+		await processCurrentButtons();
+		while (scrollCount < maxScrolls) {
+			scrollCount++;
+			window.scrollTo(0, document.body.scrollHeight);
+			await new Promise((r) => setTimeout(r, 1200));
+			await processCurrentButtons();
+		}
+		console.debug('Scrolled + clicked Add buttons:', totalClicked);
+	});
+
 	// Try to find and click the latest "Add to My Pipeline" button (defensive selectors)
 	let leadId: string | null = null;
 	const addButtons = await page.$$('button[label="Add to My Pipeline"]');
