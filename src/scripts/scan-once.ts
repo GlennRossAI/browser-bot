@@ -26,6 +26,7 @@ function isTodayIso(iso?: string | null): boolean {
 
 async function runOnce() {
   const run = await startRun({ script: 'scan-once', version: '1.0.0' });
+  try { lastRunId = Number((run as any).id) || null; } catch { lastRunId = null; }
   logMsg('Run started', { runId: run.id });
   let discovered = 0;
   let saved = 0;
@@ -243,15 +244,6 @@ try {
 
 // Ensure we finalize an open run on unexpected crashes
 let lastRunId: number | null = null;
-// Wrap startRun to capture id
-const _startRunRef = startRun;
-// @ts-ignore - monkey-patch for crash handler context
-startRun = async (...args: any[]) => {
-  const r = await _startRunRef.apply(null, args as any);
-  try { lastRunId = (r as any).id ?? null; } catch {};
-  return r;
-};
-
 async function finalizeOnCrash(reason: any) {
   if (lastRunId) {
     try { await finishRun(lastRunId, { status: 'failure', error_message: String(reason || 'process crash') }); }
