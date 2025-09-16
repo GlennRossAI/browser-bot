@@ -17,6 +17,7 @@ import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
 import { withBackoff } from '../utils/backoff.js';
 import { sanitizeEmail } from '../utils/email_utils.js';
+import { normalizeUrgency, parseTibMonths, parseRevenueRange, normalizeUseOfFunds, normalizeBankAccount } from '../utils/normalize.js';
 
 function isTodayIso(iso?: string | null): boolean {
   if (!iso) return false;
@@ -227,16 +228,27 @@ async function runOnce() {
       looking_for_max: ''
     };
 
+    // Phase 1: log normalization (no DB writes yet)
+    try {
+      const norm = {
+        urgency_code: normalizeUrgency(leadData.urgency),
+        tib_months: parseTibMonths(leadData.time_in_business),
+        revenue: parseRevenueRange(leadData.annual_revenue),
+        bank_account_bool: normalizeBankAccount(leadData.bank_account),
+        use_of_funds_norm: normalizeUseOfFunds(leadData.use_of_funds),
+      };
+      logVar('normalize.preview', norm);
+    } catch {}
+
     // Parse looking_for range from background text
     if (/How much they are looking for:\s*\$[0-9,]+\s*-\s*\$[0-9,]+/.test(backgroundInfo)) {
       const m = backgroundInfo.match(/How much they are looking for:\s*\$([0-9,]+)\s*-\s*\$([0-9,]+)/);
       if (m) { leadData.looking_for_min = `$${m[1]}`; leadData.looking_for_max = `$${m[2]}`; }
     }
 
-    if (!leadData.email || !leadData.email.trim()) {
-      logMsg('Skipping DB insert: missing email', { fundly_id: leadId });
-    } else {
-      const savedLead = await insertLead(leadData); // upsert by email
+    {
+      // Insert even if email is missing; use fundly_id for upsert in that case
+      const savedLead = await insertLead(leadData);
       saved = 1;
       logVar('db.savedLead', { id: savedLead.id, email: savedLead.email, fundly_id: (savedLead as any).fundly_id });
 
@@ -246,20 +258,30 @@ async function runOnce() {
       const qualified = evalRes.programs.filter(p => p.eligible).map(p => p.key);
       logVar('filters.programs', { anyQualified: evalRes.anyQualified, qualified });
       const thresholdOk = evalRes.anyQualified;
-      const already = await emailAlreadySent(savedLead.email);
-      const allowed = await canContactByEmail(savedLead.email);
+      const hasEmail = !!(savedLead.email && savedLead.email.includes('@'));
+      const already = hasEmail ? await emailAlreadySent(savedLead.email) : false;
+      const allowed = hasEmail ? await canContactByEmail(savedLead.email) : false;
       const shouldEmail = newToday && thresholdOk && !already && allowed;
+
+      function choosePrimaryProgram(): string | undefined {
+        const text = `${(savedLead.use_of_funds || '').toLowerCase()} ${((savedLead as any).background_info || '').toLowerCase()}`;
+        if (qualified.includes('equipment_financing') && /equipment|invoice|quote/.test(text)) return 'equipment_financing';
+        const priority: string[] = ['working_capital','line_of_credit','business_term_loan','sba_loan','bank_loc','equipment_financing','first_campaign'];
+        for (const k of priority) if (qualified.includes(k as any)) return k;
+        return qualified[0];
+      }
 
       if (shouldEmail) {
         if (DRY_RUN) {
           logMsg('Email suppressed (dry run)', { to: savedLead.email });
         }
         if (emailSendingEnabled()) {
-          const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
+          const programKey = choosePrimaryProgram();
+          const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email, programKey }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
           if (res && !(res as any).skipped) {
             await updateEmailSentAt(savedLead.email, new Date());
             emailed = 1;
-            logMsg('Email sent', { to: savedLead.email });
+            logMsg('Email sent', { to: savedLead.email, programKey });
           }
         } else {
           logMsg('Email suppressed (not LaunchAgent context)', { to: savedLead.email });

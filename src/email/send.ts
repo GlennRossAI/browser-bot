@@ -17,20 +17,34 @@ function getTransporter() {
   });
 }
 
-function buildEmailHtml() {
-  const tplPath = path.resolve(process.cwd(), 'src/email/general-template.html');
+function buildEmailHtml(templateKey?: string) {
+  const candidates = [] as string[];
+  if (templateKey) {
+    candidates.push(`src/email/templates/${templateKey}.html`);
+  }
+  candidates.push('src/email/general-template.html');
   let body = '';
-  try {
-    body = fs.readFileSync(tplPath, 'utf8');
-  } catch {
-    body = 'Thank you for reaching out regarding funding opportunities.';
+  for (const rel of candidates) {
+    const tplPath = path.resolve(process.cwd(), rel);
+    try {
+      body = fs.readFileSync(tplPath, 'utf8');
+      break;
+    } catch {}
+  }
+  if (!body) body = 'Thank you for reaching out regarding funding opportunities.';
+  // Allow program templates to include {{GENERAL}} placeholder to embed the common body
+  if (templateKey && body.includes('{{GENERAL}}')) {
+    try {
+      const general = fs.readFileSync(path.resolve(process.cwd(), 'src/email/general-template.html'), 'utf8');
+      body = body.replace('{{GENERAL}}', general);
+    } catch {}
   }
   const greeting = `<p>Hi there,</p>`;
   return greeting + body;
 }
 
-export async function sendLeadEmail({ to }: { to: string }) {
-  const html = buildEmailHtml();
+export async function sendLeadEmail({ to, programKey }: { to: string; programKey?: string }) {
+  const html = buildEmailHtml(programKey);
   const subject = process.env.EMAIL_SUBJECT || 'Funding Application — Next Steps';
   const fromName = process.env.FROM_NAME || 'Fundly Bot';
   const fromEmail = process.env.FROM_EMAIL || process.env.SMTP_USER || process.env.GMAIL_USER_EMAIL;
@@ -57,4 +71,3 @@ export async function sendLeadEmail({ to }: { to: string }) {
   });
   return { messageId: info.messageId };
 }
-

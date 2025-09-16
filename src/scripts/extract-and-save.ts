@@ -9,6 +9,7 @@ import { chromium } from 'playwright';
 import { insertLead } from '../database/queries/leads.js';
 import { closePool } from '../database/utils/connection.js';
 import { FundlyLeadInsert } from '../types/lead.js';
+import { normalizeUrgency, parseTibMonths, parseRevenueRange, normalizeUseOfFunds, normalizeBankAccount } from '../utils/normalize.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -168,6 +169,18 @@ async function main() {
       looking_for_min: "",
       looking_for_max: ""
     };
+
+    // Phase 1: log normalization (no DB writes yet)
+    try {
+      const norm = {
+        urgency_code: normalizeUrgency(leadData.urgency),
+        tib_months: parseTibMonths(leadData.time_in_business),
+        revenue: parseRevenueRange(leadData.annual_revenue),
+        bank_account_bool: normalizeBankAccount(leadData.bank_account),
+        use_of_funds_norm: normalizeUseOfFunds(leadData.use_of_funds),
+      };
+      console.log('normalize.preview', norm);
+    } catch {}
 
     // Parse funding range from background info
     if (backgroundInfo.includes("How much they are looking for:")) {

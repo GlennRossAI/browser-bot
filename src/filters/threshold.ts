@@ -1,10 +1,31 @@
 import { FundlyLead } from '../types/lead.js';
 
 function parseCurrency(text: string | undefined | null): number | null {
+  // Handles plain numbers and K/M suffixes (e.g., 120k, 1.2m)
   if (!text) return null;
-  const cleaned = String(text).replace(/[,\s]/g, '');
-  const m = cleaned.match(/\$?(\d+(?:\.\d+)?)/);
-  return m ? Number(m[1]) : null;
+  const cleaned = String(text).trim().toLowerCase().replace(/[,\s]/g, '');
+  const m = cleaned.match(/\$?([0-9]+(?:\.[0-9]+)?)([km])?/i);
+  if (!m) return null;
+  const num = Number(m[1]);
+  const suf = (m[2] || '').toLowerCase();
+  if (suf === 'k') return num * 1_000;
+  if (suf === 'm') return num * 1_000_000;
+  return num;
+}
+
+function parseCurrencyRange(text: string | undefined | null): { min: number | null; max: number | null } {
+  if (!text) return { min: null, max: null };
+  const cleaned = String(text).toLowerCase();
+  const matches = [...cleaned.matchAll(/\$?([0-9]+(?:\.[0-9]+)?)(\s*[km])?/g)];
+  if (!matches.length) return { min: null, max: null };
+  const values = matches.map((m) => {
+    const n = Number(m[1]);
+    const suf = (m[2] || '').trim().toLowerCase();
+    if (suf === 'k') return n * 1_000;
+    if (suf === 'm') return n * 1_000_000;
+    return n;
+  });
+  return { min: Math.min(...values), max: Math.max(...values) };
 }
 
 function monthsFromText(text: string | undefined | null): number | null {
@@ -58,7 +79,8 @@ export interface EvaluationResult {
 export function evaluatePrograms(
   lead: Pick<FundlyLead, 'annual_revenue' | 'time_in_business' | 'urgency' | 'bank_account' | 'background_info'>
 ): EvaluationResult {
-  const annual = parseCurrency(lead.annual_revenue) || 0;
+  const range = parseCurrencyRange(lead.annual_revenue);
+  const annual = (range.min ?? parseCurrency(lead.annual_revenue) ?? 0);
   const monthlyFromAnnual = annual > 0 ? annual / 12 : 0;
   const timeMonths = monthsFromText(lead.time_in_business) || 0;
   const bankOk = hasBankAccount(lead.bank_account);
