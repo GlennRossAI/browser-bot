@@ -26,6 +26,7 @@ export interface FundlyLead {
   bank_account_bool?: boolean | null;
   use_of_funds_norm?: string | null;
   industry_norm?: string | null;
+  filter_success?: string | null;
 }
 
 export interface FundlyLeadInsert extends Omit<FundlyLead, 'id' | 'created_at'> {

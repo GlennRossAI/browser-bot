@@ -208,10 +208,16 @@ async function runOnce() {
         nameRaw = owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '');
         if (!nameRaw) {
           // Try to derive from notice like "Gregory is exclusively working with another agent."
-          const fullText = pairs.map(p => p.label).join('\n');
-          const m = fullText.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively\s+working\s+with\s+another\s+agent\b/i);
-          if (m) nameRaw = m[1].trim();
+        const fullText = pairs.map(p => p.label).join('\n');
+        let m = fullText.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively\s+working\s+with\s+another\s+agent\b/i);
+        if (!m) {
+          try {
+            const excl = await page.locator('p:has-text("exclusively working with another agent")').first().textContent();
+            if (excl) m = excl.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively/i);
+          } catch {}
         }
+        if (m) nameRaw = m[1].trim();
+      }
       } catch {}
     }
     if (!nameRaw) {
@@ -243,7 +249,7 @@ async function runOnce() {
     const revRaw = await getFieldValue('Annual Revenue');
     const indRaw = await getFieldValue('Industry');
 
-    const leadData: FundlyLeadInsert = {
+    const leadData: FundlyLeadInsert & { filter_success?: string | null } = {
       fundly_id: leadId,
       contact_name: (nameRaw || '').trim(),
       email: emailSanitized || '',
@@ -282,6 +288,18 @@ async function runOnce() {
     }
 
     {
+      // Evaluate before insert to compute filter_success
+      const evalResPre = evaluatePrograms(leadData as any);
+      const qualifiedPre = evalResPre.programs.filter(p => p.eligible).map(p => p.key);
+      function choosePrimaryProgram(): string | undefined {
+        const text = `${(leadData.use_of_funds || '').toLowerCase()} ${(leadData.background_info || '').toLowerCase()}`;
+        if (qualifiedPre.includes('equipment_financing') && /equipment|invoice|quote/.test(text)) return 'equipment_financing';
+        const priority: string[] = ['working_capital','line_of_credit','business_term_loan','sba_loan','bank_loc','equipment_financing','first_campaign'];
+        for (const k of priority) if (qualifiedPre.includes(k as any)) return k;
+        return qualifiedPre[0];
+      }
+      leadData.filter_success = qualifiedPre.length ? (choosePrimaryProgram() || qualifiedPre[0]) : 'FAIL_ALL';
+
       // Insert even if email is missing; use fundly_id for upsert in that case
       const savedLead = await insertLead(leadData);
       saved = 1;
@@ -298,20 +316,12 @@ async function runOnce() {
       const allowed = hasEmail ? await canContactByEmail(savedLead.email) : false;
       const shouldEmail = newToday && thresholdOk && !already && allowed;
 
-      function choosePrimaryProgram(): string | undefined {
-        const text = `${(savedLead.use_of_funds || '').toLowerCase()} ${((savedLead as any).background_info || '').toLowerCase()}`;
-        if (qualified.includes('equipment_financing') && /equipment|invoice|quote/.test(text)) return 'equipment_financing';
-        const priority: string[] = ['working_capital','line_of_credit','business_term_loan','sba_loan','bank_loc','equipment_financing','first_campaign'];
-        for (const k of priority) if (qualified.includes(k as any)) return k;
-        return qualified[0];
-      }
-
       if (shouldEmail) {
         if (DRY_RUN) {
           logMsg('Email suppressed (dry run)', { to: savedLead.email });
         }
         if (emailSendingEnabled()) {
-          const programKey = choosePrimaryProgram();
+          const programKey = leadData.filter_success && leadData.filter_success !== 'FAIL_ALL' ? leadData.filter_success : undefined;
           const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email, programKey }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
           if (res && !(res as any).skipped) {
             await updateEmailSentAt(savedLead.email, new Date());

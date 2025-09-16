@@ -32,9 +32,11 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     INSERT INTO fundly_leads (
       fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
       can_contact, use_of_funds, location, urgency, time_in_business,
-      bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max
+      bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max,
+      filter_success
     ) VALUES (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18
+      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
+      $19
     )
     ON CONFLICT (email) DO UPDATE SET
       fundly_id = EXCLUDED.fundly_id,
@@ -53,15 +55,18 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       looking_for = EXCLUDED.looking_for,
       looking_for_min = EXCLUDED.looking_for_min,
       looking_for_max = EXCLUDED.looking_for_max,
-      created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END
+      created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END,
+      filter_success = COALESCE(EXCLUDED.filter_success, fundly_leads.filter_success)
     RETURNING *;
   ` : `
     INSERT INTO fundly_leads (
       fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
       can_contact, use_of_funds, location, urgency, time_in_business,
-      bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max
+      bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max,
+      filter_success
     ) VALUES (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18
+      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
+      $19
     )
     ON CONFLICT (fundly_id) DO UPDATE SET
       email_sent_at = COALESCE(EXCLUDED.email_sent_at, fundly_leads.email_sent_at),
@@ -79,11 +84,12 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       looking_for = EXCLUDED.looking_for,
       looking_for_min = EXCLUDED.looking_for_min,
       looking_for_max = EXCLUDED.looking_for_max,
-      created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END
+      created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END,
+      filter_success = COALESCE(EXCLUDED.filter_success, fundly_leads.filter_success)
     RETURNING *;
   `;
 
-  const result = await query(sql, commonValues);
+  const result = await query(sql, [...commonValues, (lead as any).filter_success ?? null]);
   return result.rows[0] as FundlyLead;
 }
 
