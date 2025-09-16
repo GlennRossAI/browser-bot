@@ -23,7 +23,16 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     lead.industry,
     lookingCombined || null,
     lead.looking_for_min,
-    lead.looking_for_max
+    lead.looking_for_max,
+    // normalized columns
+    (lead as any).urgency_code ?? null,
+    (lead as any).tib_months ?? null,
+    (lead as any).annual_revenue_min_usd ?? null,
+    (lead as any).annual_revenue_max_usd ?? null,
+    (lead as any).annual_revenue_usd_approx ?? null,
+    (lead as any).bank_account_bool ?? null,
+    (lead as any).use_of_funds_norm ?? null,
+    (lead as any).industry_norm ?? null
   ];
 
   // Consider email only if it looks like an email address
@@ -33,10 +42,13 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
       can_contact, use_of_funds, location, urgency, time_in_business,
       bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max,
+      urgency_code, tib_months, annual_revenue_min_usd, annual_revenue_max_usd, annual_revenue_usd_approx,
+      bank_account_bool, use_of_funds_norm, industry_norm,
       filter_success
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-      $19
+      $19, $20, $21, $22, $23, $24, $25, $26, $27,
+      $28
     )
     ON CONFLICT (email) DO UPDATE SET
       fundly_id = EXCLUDED.fundly_id,
@@ -55,6 +67,14 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       looking_for = EXCLUDED.looking_for,
       looking_for_min = EXCLUDED.looking_for_min,
       looking_for_max = EXCLUDED.looking_for_max,
+      urgency_code = COALESCE(EXCLUDED.urgency_code, fundly_leads.urgency_code),
+      tib_months = COALESCE(EXCLUDED.tib_months, fundly_leads.tib_months),
+      annual_revenue_min_usd = COALESCE(EXCLUDED.annual_revenue_min_usd, fundly_leads.annual_revenue_min_usd),
+      annual_revenue_max_usd = COALESCE(EXCLUDED.annual_revenue_max_usd, fundly_leads.annual_revenue_max_usd),
+      annual_revenue_usd_approx = COALESCE(EXCLUDED.annual_revenue_usd_approx, fundly_leads.annual_revenue_usd_approx),
+      bank_account_bool = COALESCE(EXCLUDED.bank_account_bool, fundly_leads.bank_account_bool),
+      use_of_funds_norm = COALESCE(EXCLUDED.use_of_funds_norm, fundly_leads.use_of_funds_norm),
+      industry_norm = COALESCE(EXCLUDED.industry_norm, fundly_leads.industry_norm),
       created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END,
       filter_success = COALESCE(EXCLUDED.filter_success, fundly_leads.filter_success)
     RETURNING *;
@@ -63,10 +83,13 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
       can_contact, use_of_funds, location, urgency, time_in_business,
       bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max,
+      urgency_code, tib_months, annual_revenue_min_usd, annual_revenue_max_usd, annual_revenue_usd_approx,
+      bank_account_bool, use_of_funds_norm, industry_norm,
       filter_success
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-      $19
+      $19, $20, $21, $22, $23, $24, $25, $26, $27,
+      $28
     )
     ON CONFLICT (fundly_id) DO UPDATE SET
       email_sent_at = COALESCE(EXCLUDED.email_sent_at, fundly_leads.email_sent_at),
@@ -84,6 +107,14 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       looking_for = EXCLUDED.looking_for,
       looking_for_min = EXCLUDED.looking_for_min,
       looking_for_max = EXCLUDED.looking_for_max,
+      urgency_code = COALESCE(EXCLUDED.urgency_code, fundly_leads.urgency_code),
+      tib_months = COALESCE(EXCLUDED.tib_months, fundly_leads.tib_months),
+      annual_revenue_min_usd = COALESCE(EXCLUDED.annual_revenue_min_usd, fundly_leads.annual_revenue_min_usd),
+      annual_revenue_max_usd = COALESCE(EXCLUDED.annual_revenue_max_usd, fundly_leads.annual_revenue_max_usd),
+      annual_revenue_usd_approx = COALESCE(EXCLUDED.annual_revenue_usd_approx, fundly_leads.annual_revenue_usd_approx),
+      bank_account_bool = COALESCE(EXCLUDED.bank_account_bool, fundly_leads.bank_account_bool),
+      use_of_funds_norm = COALESCE(EXCLUDED.use_of_funds_norm, fundly_leads.use_of_funds_norm),
+      industry_norm = COALESCE(EXCLUDED.industry_norm, fundly_leads.industry_norm),
       created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END,
       filter_success = COALESCE(EXCLUDED.filter_success, fundly_leads.filter_success)
     RETURNING *;

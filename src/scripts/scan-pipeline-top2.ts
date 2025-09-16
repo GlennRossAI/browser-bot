@@ -5,6 +5,7 @@ import { insertLead } from '../database/queries/leads.js';
 import { closePool } from '../database/utils/connection.js';
 import { FundlyLeadInsert } from '../types/lead.js';
 import { evaluatePrograms } from '../filters/threshold.js';
+import { normalizeUrgency, parseTibMonths, parseRevenueRange, normalizeUseOfFunds, normalizeBankAccount } from '../utils/normalize.js';
 import { sanitizeEmail } from '../utils/email_utils.js';
 import { logMsg, logVar } from '../utils/logger.js';
 
@@ -51,7 +52,7 @@ async function extractOne(page: Page, leadId: string) {
   const revRaw = await getField('Annual Revenue');
   const indRaw = await getField('Industry');
 
-  const lead: FundlyLeadInsert & { filter_success?: string | null } = {
+  const lead: FundlyLeadInsert & { filter_success?: string | null; [k: string]: any } = {
     fundly_id: leadId,
     contact_name: nameRaw,
     email: emailSanitized || '',
@@ -70,6 +71,17 @@ async function extractOne(page: Page, leadId: string) {
     looking_for_min: '',
     looking_for_max: ''
   };
+
+  // Normalize and attach
+  const rev = parseRevenueRange(lead.annual_revenue);
+  (lead as any).urgency_code = normalizeUrgency(lead.urgency);
+  (lead as any).tib_months = parseTibMonths(lead.time_in_business);
+  (lead as any).annual_revenue_min_usd = rev.min;
+  (lead as any).annual_revenue_max_usd = rev.max;
+  (lead as any).annual_revenue_usd_approx = rev.approx;
+  (lead as any).bank_account_bool = normalizeBankAccount(lead.bank_account);
+  (lead as any).use_of_funds_norm = normalizeUseOfFunds(lead.use_of_funds);
+  (lead as any).industry_norm = (lead.industry || '').trim().toLowerCase() || null;
 
   const evalRes = evaluatePrograms(lead as any);
   const qualified = evalRes.programs.filter(p => p.eligible).map(p => p.key);

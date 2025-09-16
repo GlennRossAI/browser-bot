@@ -93,7 +93,9 @@ async function runOnce() {
     discovered = 1;
 
     await page.locator(`div[id="${leadId}"]`).first().click();
-    await page.waitForTimeout(800);
+    try {
+      await page.waitForSelector('p:has-text("Email"), p:has-text("Use of Funds"), h2:has-text("Lead Details")', { timeout: 4000 });
+    } catch { await page.waitForTimeout(1200); }
 
     // Reveal contact if needed (robust set of candidates)
     let revealed = false;
@@ -179,12 +181,18 @@ async function runOnce() {
     logVar('contact.exclusive', isExclusive);
 
     // Extract contact name via multiple strategies
+    function cleanName(n: string): string {
+      let s = (n || '').replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').trim();
+      s = s.replace(/\b(am|pm)\b/gi, '').trim();
+      s = s.replace(/^(am|pm)\s*/i, '').trim();
+      return s;
+    }
     let nameRaw = '';
     try { nameRaw = (await page.locator('p:text-is("Name") + p').first().textContent()) || ''; } catch {}
-    nameRaw = (nameRaw || '').trim();
+    nameRaw = cleanName(nameRaw);
     if (!nameRaw) {
       try { nameRaw = (await page.locator('p:text-is("Full Name") + p').first().textContent()) || ''; } catch {}
-      nameRaw = (nameRaw || '').trim();
+      nameRaw = cleanName(nameRaw);
     }
     if (!nameRaw) {
       // Scan the contact panel for label/value pairs and infer likely name fields
@@ -216,14 +224,14 @@ async function runOnce() {
             if (excl) m = excl.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively/i);
           } catch {}
         }
-        if (m) nameRaw = m[1].trim();
+        if (m) nameRaw = cleanName(m[1]);
       }
       } catch {}
     }
     if (!nameRaw) {
       // Fallback: provided specific CSS path
       const specific = '#root > div > div.css-1v4ow96 > div.css-18088eb > div > div > div > div > div > div.chakra-stack.css-11n7j0t > div > div.chakra-stack.css-1f3yssc > div > div > p.chakra-text.css-21j35u';
-      try { nameRaw = (await page.locator(specific).first().textContent())?.trim() || ''; } catch {}
+      try { nameRaw = cleanName((await page.locator(specific).first().textContent()) || ''); } catch {}
     }
 
     let emailSanitized = sanitizeEmail(emailRaw);
@@ -236,9 +244,34 @@ async function runOnce() {
     const backgroundInfo = ((await page.locator('p:text-is("Background Info") + p').textContent().catch(() => '')) || '').replace(/Show less$/i, '').trim();
     logVar('background.len', backgroundInfo.length);
 
-    const getFieldValue = async (label: string) => {
-      try { return (await page.locator(`p:text-is("${label}") + p`).textContent())?.trim() || ''; } catch { return ''; }
-    };
+    async function getFieldValue(label: string): Promise<string> {
+      // 1) exact next-sibling pattern
+      try {
+        const t = await page.locator(`p:text-is("${label}") + p`).textContent();
+        if (t && t.trim()) return t.trim();
+      } catch {}
+      // 2) within contact tab panel map labels->values
+      try {
+        const contactPanel = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
+        const pairs = await contactPanel.locator('p').evaluateAll((nodes: Element[]) => {
+          const out: Array<{ label: string; value: string }> = [];
+          for (const el of nodes) {
+            const lbl = (el.textContent || '').trim();
+            const val = ((el.nextElementSibling as HTMLElement | null)?.textContent || '').trim();
+            if (lbl) out.push({ label: lbl, value: val });
+          }
+          return out;
+        }) as Array<{ label: string; value: string }>;
+        const hit = pairs.find(p => p.label.toLowerCase() === label.toLowerCase());
+        if (hit && hit.value) return hit.value;
+      } catch {}
+      // 3) global fallback
+      try {
+        const t = await page.locator(`p:has-text("${label}")`).first().evaluate((el: any) => (el.nextElementSibling as HTMLElement | null)?.textContent || '');
+        if (t && String(t).trim()) return String(t).trim();
+      } catch {}
+      return '';
+    }
 
     // Build lead payload
     const uofRaw = await getFieldValue('Use of Funds');
@@ -269,17 +302,17 @@ async function runOnce() {
       looking_for_max: ''
     };
 
-    // Phase 1: log normalization (no DB writes yet)
-    try {
-      const norm = {
-        urgency_code: normalizeUrgency(leadData.urgency),
-        tib_months: parseTibMonths(leadData.time_in_business),
-        revenue: parseRevenueRange(leadData.annual_revenue),
-        bank_account_bool: normalizeBankAccount(leadData.bank_account),
-        use_of_funds_norm: normalizeUseOfFunds(leadData.use_of_funds),
-      };
-      logVar('normalize.preview', norm);
-    } catch {}
+    // Compute normalization (persisted during insert)
+    const revenueNorm = parseRevenueRange(leadData.annual_revenue);
+    (leadData as any).urgency_code = normalizeUrgency(leadData.urgency);
+    (leadData as any).tib_months = parseTibMonths(leadData.time_in_business);
+    (leadData as any).annual_revenue_min_usd = revenueNorm.min;
+    (leadData as any).annual_revenue_max_usd = revenueNorm.max;
+    (leadData as any).annual_revenue_usd_approx = revenueNorm.approx;
+    (leadData as any).bank_account_bool = normalizeBankAccount(leadData.bank_account);
+    (leadData as any).use_of_funds_norm = normalizeUseOfFunds(leadData.use_of_funds);
+    (leadData as any).industry_norm = (leadData.industry || '').trim().toLowerCase() || null;
+    try { logVar('normalize.preview', (leadData as any)); } catch {}
 
     // Parse looking_for range from background text
     if (/How much they are looking for:\s*\$[0-9,]+\s*-\s*\$[0-9,]+/.test(backgroundInfo)) {

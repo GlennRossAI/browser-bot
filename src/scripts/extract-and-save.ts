@@ -94,11 +94,17 @@ async function main() {
     }
 
     // Extract email, phone, and name
+    function cleanName(n: string): string {
+      let s = (n || '').replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').trim();
+      s = s.replace(/\b(am|pm)\b/gi, '').trim();
+      s = s.replace(/^(am|pm)\s*/i, '').trim();
+      return s;
+    }
     const contactSection = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
     // Try stable label-next-sibling pattern
     const nameFromLabel = await contactSection.locator('p:text-is("Name") + p').textContent().then(v => (v || '').trim()).catch(() => '');
     // Fallbacks for different UI variants
-    let nameAlt = nameFromLabel || await contactSection.locator('p:text-is("Full Name") + p').textContent().then(v => (v || '').trim()).catch(() => '') || '';
+    let nameAlt = nameFromLabel || await contactSection.locator('p:text-is("Full Name") + p').textContent().then(v => cleanName(v || '')).catch(() => '') || '';
     if (!(nameAlt || '').trim()) {
       // Generalized label scan
       try {
@@ -116,7 +122,7 @@ async function main() {
         const nameLbl = pick(/^(name|full name|contact name)$/i);
         const first = pick(/^first\s*name$/i);
         const last = pick(/^last\s*name$/i);
-        nameAlt = (owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '')).trim();
+        nameAlt = cleanName(owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : ''));
         if (!nameAlt) {
           const fullText = pairs.map(p => p.label).join('\n');
           const m = fullText.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively\s+working\s+with\s+another\s+agent\b/i);
@@ -129,7 +135,7 @@ async function main() {
       // Fallback: provided specific CSS path
       const specific = '#root > div > div.css-1v4ow96 > div.css-18088eb > div > div > div > div > div > div.chakra-stack.css-11n7j0t > div > div.chakra-stack.css-1f3yssc > div > div > p.chakra-text.css-21j35u';
       try {
-        nameAlt = (await page.locator(specific).first().textContent())?.trim() || '';
+        nameAlt = cleanName((await page.locator(specific).first().textContent()) || '');
       } catch {}
     }
     const email = await contactSection.locator('p:text-is("Email") + p').textContent() || "Unknown Email";
