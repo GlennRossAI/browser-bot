@@ -28,21 +28,43 @@ async function extractOne(page: Page, leadId: string) {
   if (!emailRaw) {
     try { const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href'); if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0]; } catch {}
   }
-  const emailSanitized = sanitizeEmail(emailRaw) || (isExclusive ? 'LOCKED' : '');
+  const emailSanitized = sanitizeEmail(emailRaw) || 'LOCKED';
 
   // Name
   let nameRaw = '';
   try { nameRaw = (await page.locator('p:text-is("Name") + p').first().textContent()) || ''; } catch {}
   if (!nameRaw) { try { nameRaw = (await page.locator('p:text-is("Full Name") + p').first().textContent()) || ''; } catch {} }
-  nameRaw = (nameRaw || '').trim();
+  function cleanName(n: string): string {
+    let s = (n || '').replace(/[\n\r]+/g, ' ').replace(/\s{2,}/g, ' ').trim();
+    s = s.replace(/\b(am|pm)\b/gi, '').trim();
+    s = s.replace(/^(am|pm)\s*/i, '').trim();
+    return s || 'LOCKED';
+  }
+  nameRaw = cleanName(nameRaw);
 
   // Background
   try { await page.getByText('Show more').click({ timeout: 1500 }); } catch {}
   const backgroundInfo = ((await page.locator('p:text-is("Background Info") + p').textContent().catch(() => '')) || '').replace(/Show less$/i, '').trim();
 
-  const getField = async (label: string) => {
-    try { return (await page.locator(`p:text-is("${label}") + p`).textContent())?.trim() || ''; } catch { return ''; }
-  };
+  async function getField(label: string): Promise<string> {
+    try { const t = await page.locator(`p:text-is("${label}") + p`).textContent(); if (t && t.trim()) return t.trim(); } catch {}
+    try {
+      const contactPanel = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
+      const pairs = await contactPanel.locator('p').evaluateAll((nodes: Element[]) => {
+        const out: Array<{ label: string; value: string }> = [];
+        for (const el of nodes) {
+          const lbl = (el.textContent || '').trim();
+          const val = ((el.nextElementSibling as HTMLElement | null)?.textContent || '').trim();
+          if (lbl) out.push({ label: lbl, value: val });
+        }
+        return out;
+      }) as Array<{ label: string; value: string }>;
+      const hit = pairs.find(p => p.label.toLowerCase() === label.toLowerCase());
+      if (hit && hit.value) return hit.value;
+    } catch {}
+    try { const t = await page.locator(`p:has-text("${label}")`).first().evaluate((el: any) => (el.nextElementSibling as HTMLElement | null)?.textContent || ''); if (t && String(t).trim()) return String(t).trim(); } catch {}
+    return '';
+  }
 
   const uofRaw = await getField('Use of Funds');
   const locRaw = await getField('Location');
@@ -54,34 +76,34 @@ async function extractOne(page: Page, leadId: string) {
 
   const lead: FundlyLeadInsert & { filter_success?: string | null; [k: string]: any } = {
     fundly_id: leadId,
-    contact_name: nameRaw,
-    email: emailSanitized || '',
-    phone: (phoneRaw || '').trim(),
-    background_info: backgroundInfo,
+    contact_name: nameRaw || 'LOCKED',
+    email: emailSanitized || 'LOCKED',
+    phone: (phoneRaw || 'LOCKED').trim() || 'LOCKED',
+    background_info: backgroundInfo || 'LOCKED',
     email_sent_at: null,
     created_at: new Date().toISOString().replace('Z', '+00:00'),
     can_contact: true,
-    use_of_funds: (isExclusive && !uofRaw) ? 'LOCKED' : uofRaw,
-    location: (isExclusive && !locRaw) ? 'LOCKED' : locRaw,
-    urgency: (isExclusive && !urgRaw) ? 'LOCKED' : urgRaw,
-    time_in_business: (isExclusive && !tibRaw) ? 'LOCKED' : tibRaw,
-    bank_account: (isExclusive && !bankRaw) ? 'LOCKED' : bankRaw,
-    annual_revenue: (isExclusive && !revRaw) ? 'LOCKED' : revRaw,
-    industry: (isExclusive && !indRaw) ? 'LOCKED' : indRaw,
-    looking_for_min: '',
-    looking_for_max: ''
+    use_of_funds: uofRaw || 'LOCKED',
+    location: locRaw || 'LOCKED',
+    urgency: urgRaw || 'LOCKED',
+    time_in_business: tibRaw || 'LOCKED',
+    bank_account: bankRaw || 'LOCKED',
+    annual_revenue: revRaw || 'LOCKED',
+    industry: indRaw || 'LOCKED',
+    looking_for_min: 'LOCKED',
+    looking_for_max: 'LOCKED'
   };
 
   // Normalize and attach
   const rev = parseRevenueRange(lead.annual_revenue);
   (lead as any).urgency_code = normalizeUrgency(lead.urgency);
-  (lead as any).tib_months = parseTibMonths(lead.time_in_business);
-  (lead as any).annual_revenue_min_usd = rev.min;
-  (lead as any).annual_revenue_max_usd = rev.max;
-  (lead as any).annual_revenue_usd_approx = rev.approx;
-  (lead as any).bank_account_bool = normalizeBankAccount(lead.bank_account);
-  (lead as any).use_of_funds_norm = normalizeUseOfFunds(lead.use_of_funds);
-  (lead as any).industry_norm = (lead.industry || '').trim().toLowerCase() || null;
+  (lead as any).tib_months = parseTibMonths(lead.time_in_business) ?? -1;
+  (lead as any).annual_revenue_min_usd = rev.min ?? -1;
+  (lead as any).annual_revenue_max_usd = rev.max ?? -1;
+  (lead as any).annual_revenue_usd_approx = rev.approx ?? -1;
+  (lead as any).bank_account_bool = normalizeBankAccount(lead.bank_account) ?? false;
+  (lead as any).use_of_funds_norm = lead.use_of_funds === 'LOCKED' ? 'locked' : normalizeUseOfFunds(lead.use_of_funds);
+  (lead as any).industry_norm = lead.industry === 'LOCKED' ? 'locked' : ((lead.industry || '').trim().toLowerCase() || 'locked');
 
   const evalRes = evaluatePrograms(lead as any);
   const qualified = evalRes.programs.filter(p => p.eligible).map(p => p.key);

@@ -235,7 +235,7 @@ async function runOnce() {
     }
 
     let emailSanitized = sanitizeEmail(emailRaw);
-    if (!emailSanitized && isExclusive) emailSanitized = 'LOCKED';
+    if (!emailSanitized) emailSanitized = 'LOCKED';
     logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
     try { if (nameRaw) logVar('contact.nameGuess', nameRaw); } catch {}
 
@@ -284,34 +284,36 @@ async function runOnce() {
 
     const leadData: FundlyLeadInsert & { filter_success?: string | null } = {
       fundly_id: leadId,
-      contact_name: (nameRaw || '').trim(),
+      contact_name: (nameRaw || 'LOCKED').trim() || 'LOCKED',
       email: emailSanitized || '',
-      phone: phoneRaw.trim(),
-      background_info: backgroundInfo,
+      phone: (phoneRaw || 'LOCKED').trim() || 'LOCKED',
+      background_info: backgroundInfo || 'LOCKED',
       email_sent_at: null,
       created_at: new Date().toISOString().replace('Z', '+00:00'),
       can_contact: true,
-      use_of_funds: (isExclusive && !uofRaw) ? 'LOCKED' : uofRaw,
-      location: (isExclusive && !locRaw) ? 'LOCKED' : locRaw,
-      urgency: (isExclusive && !urgRaw) ? 'LOCKED' : urgRaw,
-      time_in_business: (isExclusive && !tibRaw) ? 'LOCKED' : tibRaw,
-      bank_account: (isExclusive && !bankRaw) ? 'LOCKED' : bankRaw,
-      annual_revenue: (isExclusive && !revRaw) ? 'LOCKED' : revRaw,
-      industry: (isExclusive && !indRaw) ? 'LOCKED' : indRaw,
+      use_of_funds: uofRaw || 'LOCKED',
+      location: locRaw || 'LOCKED',
+      urgency: urgRaw || 'LOCKED',
+      time_in_business: tibRaw || 'LOCKED',
+      bank_account: bankRaw || 'LOCKED',
+      annual_revenue: revRaw || 'LOCKED',
+      industry: indRaw || 'LOCKED',
       looking_for_min: '',
       looking_for_max: ''
     };
 
     // Compute normalization (persisted during insert)
     const revenueNorm = parseRevenueRange(leadData.annual_revenue);
-    (leadData as any).urgency_code = normalizeUrgency(leadData.urgency);
-    (leadData as any).tib_months = parseTibMonths(leadData.time_in_business);
-    (leadData as any).annual_revenue_min_usd = revenueNorm.min;
-    (leadData as any).annual_revenue_max_usd = revenueNorm.max;
-    (leadData as any).annual_revenue_usd_approx = revenueNorm.approx;
-    (leadData as any).bank_account_bool = normalizeBankAccount(leadData.bank_account);
-    (leadData as any).use_of_funds_norm = normalizeUseOfFunds(leadData.use_of_funds);
-    (leadData as any).industry_norm = (leadData.industry || '').trim().toLowerCase() || null;
+    const urgencyCode = normalizeUrgency(leadData.urgency);
+    (leadData as any).urgency_code = urgencyCode === 'unknown' && leadData.urgency === 'LOCKED' ? 'locked' : urgencyCode;
+    (leadData as any).tib_months = parseTibMonths(leadData.time_in_business) ?? -1;
+    (leadData as any).annual_revenue_min_usd = revenueNorm.min ?? -1;
+    (leadData as any).annual_revenue_max_usd = revenueNorm.max ?? -1;
+    (leadData as any).annual_revenue_usd_approx = revenueNorm.approx ?? -1;
+    const bankBool = normalizeBankAccount(leadData.bank_account);
+    (leadData as any).bank_account_bool = (bankBool == null) ? false : bankBool;
+    (leadData as any).use_of_funds_norm = leadData.use_of_funds === 'LOCKED' ? 'locked' : normalizeUseOfFunds(leadData.use_of_funds);
+    (leadData as any).industry_norm = leadData.industry === 'LOCKED' ? 'locked' : ((leadData.industry || '').trim().toLowerCase() || 'locked');
     try { logVar('normalize.preview', (leadData as any)); } catch {}
 
     // Parse looking_for range from background text
@@ -319,6 +321,8 @@ async function runOnce() {
       const m = backgroundInfo.match(/How much they are looking for:\s*\$([0-9,]+)\s*-\s*\$([0-9,]+)/);
       if (m) { leadData.looking_for_min = `$${m[1]}`; leadData.looking_for_max = `$${m[2]}`; }
     }
+    if (!leadData.looking_for_min) leadData.looking_for_min = 'LOCKED';
+    if (!leadData.looking_for_max) leadData.looking_for_max = 'LOCKED';
 
     {
       // Evaluate before insert to compute filter_success
