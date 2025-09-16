@@ -10,7 +10,20 @@ import { normalizeUrgency, parseTibMonths, parseRevenueRange, normalizeUseOfFund
 
 async function extractFromPipeline(page: Page, pipelineId: string) {
   await page.goto(`https://app.getfundly.com/pipeline/business/${pipelineId}`);
-  await page.waitForSelector('h2:has-text("Lead Details"), p:has-text("Use of Funds")', { timeout: 15000 });
+  try {
+    await page.waitForSelector('h2:has-text("Lead Details"), p:has-text("Use of Funds"), p:has-text("Email")', { timeout: 40000 });
+  } catch {
+    await page.waitForTimeout(3000);
+  }
+  // Try to reveal contact if available
+  try {
+    const reveal = page.getByRole('button', { name: /Reveal/i });
+    if (await reveal.count()) {
+      const disabled = await reveal.isDisabled().catch(() => false);
+      if (!disabled) await reveal.click({ timeout: 3000 }).catch(() => {});
+    }
+  } catch {}
+  try { await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)); } catch {}
 
   // Exclusivity banner
   let isExclusive = false;
