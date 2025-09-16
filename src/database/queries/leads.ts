@@ -47,8 +47,7 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       filter_success
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-      $19, $20, $21, $22, $23, $24, $25, $26, $27,
-      $28
+      $19, $20, $21, $22, $23, $24, $25, $26, $27
     )
     ON CONFLICT (email) DO UPDATE SET
       fundly_id = EXCLUDED.fundly_id,
@@ -88,8 +87,7 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
       filter_success
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-      $19, $20, $21, $22, $23, $24, $25, $26, $27,
-      $28
+      $19, $20, $21, $22, $23, $24, $25, $26, $27
     )
     ON CONFLICT (fundly_id) DO UPDATE SET
       email_sent_at = COALESCE(EXCLUDED.email_sent_at, fundly_leads.email_sent_at),
