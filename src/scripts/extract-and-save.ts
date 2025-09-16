@@ -117,6 +117,11 @@ async function main() {
         const first = pick(/^first\s*name$/i);
         const last = pick(/^last\s*name$/i);
         nameAlt = (owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '')).trim();
+        if (!nameAlt) {
+          const fullText = pairs.map(p => p.label).join('\n');
+          const m = fullText.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively\s+working\s+with\s+another\s+agent\b/i);
+          if (m) nameAlt = m[1].trim();
+        }
       } catch {}
     }
 
@@ -138,6 +143,12 @@ async function main() {
       console.log("ℹ️ Background info already expanded");
     }
 
+    // Detect exclusivity
+    let isExclusive = false;
+    try { if (await page.locator('h2:has-text("Exclusive with Others")').count()) isExclusive = true; } catch {}
+    if (!isExclusive) { try { const btn = page.getByRole('button', { name: /Reveal/i }); if (await btn.count()) isExclusive = await btn.isDisabled().catch(() => false); } catch {} }
+    if (!isExclusive) { try { if (await page.locator('p:has-text("exclusively working with another agent")').count()) isExclusive = true; } catch {} }
+
     // Extract all field data
     const backgroundInfoRaw = await page.locator('p:text-is("Background Info") + p').textContent() || "";
     const backgroundInfo = backgroundInfoRaw.replace(/Show less$/i, "").trim();
@@ -150,22 +161,30 @@ async function main() {
       }
     };
 
+    const uofRaw = await getFieldValue("Use of Funds");
+    const locRaw = await getFieldValue("Location");
+    const urgRaw = await getFieldValue("Urgency");
+    const tibRaw = await getFieldValue("Time in Business");
+    const bankRaw = await getFieldValue("Bank Account");
+    const revRaw = await getFieldValue("Annual Revenue");
+    const indRaw = await getFieldValue("Industry");
+
     const leadData: FundlyLeadInsert = {
       fundly_id: leadId,
       contact_name: (nameAlt || '').trim(),
-      email: email.trim(),
+      email: (email.trim() || (isExclusive ? 'LOCKED' : '')),
       phone: phone.trim(),
       background_info: backgroundInfo,
       email_sent_at: null,
       created_at: new Date().toISOString().replace("Z", "+00:00"),
       can_contact: true,
-      use_of_funds: await getFieldValue("Use of Funds"),
-      location: await getFieldValue("Location"),
-      urgency: await getFieldValue("Urgency"),
-      time_in_business: await getFieldValue("Time in Business"),
-      bank_account: await getFieldValue("Bank Account"),
-      annual_revenue: await getFieldValue("Annual Revenue"),
-      industry: await getFieldValue("Industry"),
+      use_of_funds: (isExclusive && !uofRaw) ? 'LOCKED' : uofRaw,
+      location: (isExclusive && !locRaw) ? 'LOCKED' : locRaw,
+      urgency: (isExclusive && !urgRaw) ? 'LOCKED' : urgRaw,
+      time_in_business: (isExclusive && !tibRaw) ? 'LOCKED' : tibRaw,
+      bank_account: (isExclusive && !bankRaw) ? 'LOCKED' : bankRaw,
+      annual_revenue: (isExclusive && !revRaw) ? 'LOCKED' : revRaw,
+      industry: (isExclusive && !indRaw) ? 'LOCKED' : indRaw,
       looking_for_min: "",
       looking_for_max: ""
     };

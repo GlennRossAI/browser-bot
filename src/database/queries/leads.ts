@@ -26,7 +26,8 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     lead.looking_for_max
   ];
 
-  const upsertOnEmail = Boolean(lead.email && String(lead.email).trim());
+  // Consider email only if it looks like an email address
+  const upsertOnEmail = !!(lead.email && /@/.test(String(lead.email)));
   const sql = upsertOnEmail ? `
     INSERT INTO fundly_leads (
       fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,

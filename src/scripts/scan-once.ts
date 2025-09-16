@@ -158,6 +158,26 @@ async function runOnce() {
         if (tel) phoneRaw = tel.replace(/^tel:/i, '');
       } catch {}
     }
+    // Detect exclusivity banner/lock state (email not available yet)
+    let isExclusive = false;
+    try {
+      const banner = await page.locator('h2:has-text("Exclusive with Others")');
+      if (await banner.count()) isExclusive = true;
+    } catch {}
+    if (!isExclusive) {
+      try {
+        const note = await page.locator('p:has-text("exclusively working with another agent")');
+        if (await note.count()) isExclusive = true;
+      } catch {}
+    }
+    if (!isExclusive) {
+      try {
+        const revealBtn = page.getByRole('button', { name: /Reveal/i });
+        if (await revealBtn.count()) isExclusive = await revealBtn.isDisabled().catch(() => false);
+      } catch {}
+    }
+    logVar('contact.exclusive', isExclusive);
+
     // Extract contact name via multiple strategies
     let nameRaw = '';
     try { nameRaw = (await page.locator('p:text-is("Name") + p').first().textContent()) || ''; } catch {}
@@ -186,6 +206,12 @@ async function runOnce() {
         const first = pick(/^first\s*name$/i);
         const last = pick(/^last\s*name$/i);
         nameRaw = owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '');
+        if (!nameRaw) {
+          // Try to derive from notice like "Gregory is exclusively working with another agent."
+          const fullText = pairs.map(p => p.label).join('\n');
+          const m = fullText.match(/\b([A-Za-z][A-Za-z'\-]+(?:\s+[A-Za-z][A-Za-z'\-]+){0,2})\s+is\s+exclusively\s+working\s+with\s+another\s+agent\b/i);
+          if (m) nameRaw = m[1].trim();
+        }
       } catch {}
     }
     if (!nameRaw) {
@@ -194,7 +220,8 @@ async function runOnce() {
       try { nameRaw = (await page.locator(specific).first().textContent())?.trim() || ''; } catch {}
     }
 
-    const emailSanitized = sanitizeEmail(emailRaw);
+    let emailSanitized = sanitizeEmail(emailRaw);
+    if (!emailSanitized && isExclusive) emailSanitized = 'LOCKED';
     logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
     try { if (nameRaw) logVar('contact.nameGuess', nameRaw); } catch {}
 
@@ -208,6 +235,14 @@ async function runOnce() {
     };
 
     // Build lead payload
+    const uofRaw = await getFieldValue('Use of Funds');
+    const locRaw = await getFieldValue('Location');
+    const urgRaw = await getFieldValue('Urgency');
+    const tibRaw = await getFieldValue('Time in Business');
+    const bankRaw = await getFieldValue('Bank Account');
+    const revRaw = await getFieldValue('Annual Revenue');
+    const indRaw = await getFieldValue('Industry');
+
     const leadData: FundlyLeadInsert = {
       fundly_id: leadId,
       contact_name: (nameRaw || '').trim(),
@@ -217,13 +252,13 @@ async function runOnce() {
       email_sent_at: null,
       created_at: new Date().toISOString().replace('Z', '+00:00'),
       can_contact: true,
-      use_of_funds: await getFieldValue('Use of Funds'),
-      location: await getFieldValue('Location'),
-      urgency: await getFieldValue('Urgency'),
-      time_in_business: await getFieldValue('Time in Business'),
-      bank_account: await getFieldValue('Bank Account'),
-      annual_revenue: await getFieldValue('Annual Revenue'),
-      industry: await getFieldValue('Industry'),
+      use_of_funds: (isExclusive && !uofRaw) ? 'LOCKED' : uofRaw,
+      location: (isExclusive && !locRaw) ? 'LOCKED' : locRaw,
+      urgency: (isExclusive && !urgRaw) ? 'LOCKED' : urgRaw,
+      time_in_business: (isExclusive && !tibRaw) ? 'LOCKED' : tibRaw,
+      bank_account: (isExclusive && !bankRaw) ? 'LOCKED' : bankRaw,
+      annual_revenue: (isExclusive && !revRaw) ? 'LOCKED' : revRaw,
+      industry: (isExclusive && !indRaw) ? 'LOCKED' : indRaw,
       looking_for_min: '',
       looking_for_max: ''
     };

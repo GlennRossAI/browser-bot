@@ -82944,3 +82944,997 @@
 [DBG] background.len 0
 [INFO] Skipping DB insert: missing email { fundly_id: '30378' }
 [INFO] Run finished { discovered: 1, saved: 0, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.raw { emailRaw: '', emailSanitized: null, phoneRaw: '' }
+[DBG] background.len 0
+[DBG] normalize.preview {
+  urgency_code: 'unknown',
+  tib_months: null,
+  revenue: { min: null, max: null, approx: null },
+  bank_account_bool: null,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:20 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:22 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:25 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:27 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:30 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:32 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:35 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:37 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:40 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:42 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory DeVincent
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30372',
+  '30371', '30370',
+  '30369', '30368'
+]
+[INFO] Revealed contact info 
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 04:45 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: null,
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess pm
+Gregory
+[DBG] background.len 134
+[DBG] normalize.preview {
+  urgency_code: 'this_week',
+  tib_months: 60,
+  revenue: { min: 250000, max: 500000, approx: 375000 },
+  bank_account_bool: true,
+  use_of_funds_norm: 'other'
+}
+[DBG] db.savedLead { id: 4562, email: '', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 2
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30373',
+  '30372', '30371',
+  '30370', '30369'
+]
+[INFO] Revealed contact info 
