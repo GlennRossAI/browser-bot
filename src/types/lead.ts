@@ -1,6 +1,7 @@
 export interface FundlyLead {
   id?: number; // Database auto-increment ID
   fundly_id: string; // ID from Fundly system
+  contact_name: string;
   email: string;
   phone: string;
   background_info: string;

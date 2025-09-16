@@ -6,8 +6,7 @@
 
 #### **Revenue Requirements**
 
-- **Monthly Revenue**: >= $20,000
-- **Annual Revenue**: >= $240,000 (equivalent)
+- **Monthly Revenue**: >= $10,000
 
 #### **Business Maturity**
 

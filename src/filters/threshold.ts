@@ -22,7 +22,8 @@ function monthsFromText(text: string | undefined | null): number | null {
 function urgencyWithinOneMonth(urgency: string | undefined | null): boolean {
   if (!urgency) return false;
   const t = urgency.toLowerCase();
-  return /(asap|this\s*week|this\s*month|within\s*30\s*days|<\s*1\s*month|\bnow\b)/.test(t);
+  // Accept common urgent phrases, including "like yesterday"
+  return /(asap|this\s*week|this\s*month|within\s*30\s*days|<\s*1\s*month|\bnow\b|like\s*yesterday)/.test(t);
 }
 
 export function passesRequirements(lead: Pick<FundlyLead, 'annual_revenue' | 'time_in_business' | 'urgency' | 'bank_account' | 'background_info'>): boolean {
@@ -38,4 +39,3 @@ export function passesRequirements(lead: Pick<FundlyLead, 'annual_revenue' | 'ti
   // We treat them as neutral and focus on the core qualifiers above.
   return monthlyOk && tibOk && urgencyOk && bankOk;
 }
-

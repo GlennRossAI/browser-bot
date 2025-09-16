@@ -89,8 +89,12 @@ async function main() {
       console.log("ℹ️ Contact info already visible");
     }
 
-    // Extract email and phone
+    // Extract email, phone, and name
     const contactSection = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
+    // Try stable label-next-sibling pattern
+    const nameFromLabel = await contactSection.locator('p:text-is("Name") + p').textContent().catch(() => '');
+    // Fallbacks for different UI variants
+    const nameAlt = nameFromLabel || await contactSection.locator('p:text-is("Full Name") + p').textContent().catch(() => '') || '';
     const email = await contactSection.locator('p:text-is("Email") + p').textContent() || "Unknown Email";
     const phone = await contactSection.locator('p:text-is("Phone") + p').textContent() || "Unknown Phone";
 
@@ -116,6 +120,7 @@ async function main() {
 
     const leadData: FundlyLeadInsert = {
       fundly_id: leadId,
+      contact_name: (nameAlt || '').trim(),
       email: email.trim(),
       phone: phone.trim(),
       background_info: backgroundInfo,

@@ -1,0 +1,191 @@
+[ERR] locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59)
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Email' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Email' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:46:56) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] read ETIMEDOUT
+Error: read ETIMEDOUT
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:14:18)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:56:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:200:25) {
+  errno: -60,
+  code: 'ETIMEDOUT',
+  syscall: 'read'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] column "contact_name" of relation "fundly_leads" does not exist
+error: column "contact_name" of relation "fundly_leads" does not exist
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg/lib/client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:16:20)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:58:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:200:25) {
+  length: 137,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1065',
+  routine: 'checkInsertTargets'
+}
+[ERR] column "contact_name" of relation "fundly_leads" does not exist
+error: column "contact_name" of relation "fundly_leads" does not exist
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg/lib/client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:16:20)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:58:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:208:25) {
+  length: 137,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1065',
+  routine: 'checkInsertTargets'
+}

@@ -22,6 +22,7 @@ async function main() {
     // Convert the JSON data to match our database structure
     const leadData: FundlyLeadInsert = {
       fundly_id: jsonData.id || jsonData.fundly_id,
+      contact_name: jsonData.contact_name || jsonData.name || '',
       email: jsonData.email,
       phone: jsonData.phone,
       background_info: jsonData.background_info,

@@ -18,3 +18,5 @@ data/extracted-lead-data.json
 
 # macOS
 .DS_Store
+
+logs/

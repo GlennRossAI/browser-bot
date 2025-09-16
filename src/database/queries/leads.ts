@@ -7,14 +7,15 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     : '';
   const sql = `
     INSERT INTO fundly_leads (
-      fundly_id, email, phone, background_info, email_sent_at, created_at,
+      fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
       can_contact, use_of_funds, location, urgency, time_in_business,
       bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max
     ) VALUES (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17
+      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18
     )
     ON CONFLICT (email) DO UPDATE SET
       fundly_id = EXCLUDED.fundly_id,
+      contact_name = EXCLUDED.contact_name,
       phone = EXCLUDED.phone,
       background_info = EXCLUDED.background_info,
       email_sent_at = EXCLUDED.email_sent_at,
@@ -35,6 +36,7 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
 
   const values = [
     lead.fundly_id,
+    lead.contact_name,
     lead.email,
     lead.phone,
     lead.background_info,
@@ -83,12 +85,12 @@ export async function updateEmailSentAt(email: string, sentAt: Date): Promise<vo
 export async function emailAlreadySent(email: string): Promise<boolean> {
   const sql = 'SELECT 1 FROM fundly_leads WHERE email = $1 AND email_sent_at IS NOT NULL LIMIT 1';
   const res = await query(sql, [email]);
-  return res.rowCount > 0;
+  return (res.rowCount ?? 0) > 0;
 }
 
 export async function canContactByEmail(email: string): Promise<boolean> {
   const sql = 'SELECT can_contact FROM fundly_leads WHERE email = $1 ORDER BY created_at DESC LIMIT 1';
   const res = await query(sql, [email]);
-  if (!res.rowCount) return false;
+  if (!(res.rowCount ?? 0)) return false;
   return !!res.rows[0].can_contact;
 }

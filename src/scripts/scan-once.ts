@@ -156,6 +156,13 @@ async function runOnce() {
         if (tel) phoneRaw = tel.replace(/^tel:/i, '');
       } catch {}
     }
+    // Extract contact name via multiple strategies
+    let nameRaw = '';
+    try { nameRaw = await page.locator('p:text-is("Name") + p').first().textContent() || ''; } catch {}
+    if (!nameRaw) {
+      try { nameRaw = await page.locator('p:text-is("Full Name") + p').first().textContent() || ''; } catch {}
+    }
+
     const emailSanitized = sanitizeEmail(emailRaw);
     logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
 
@@ -171,6 +178,7 @@ async function runOnce() {
     // Build lead payload
     const leadData: FundlyLeadInsert = {
       fundly_id: leadId,
+      contact_name: (nameRaw || '').trim(),
       email: emailSanitized || '',
       phone: phoneRaw.trim(),
       background_info: backgroundInfo,
