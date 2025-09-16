@@ -77,13 +77,15 @@ export interface EvaluationResult {
 }
 
 export function evaluatePrograms(
-  lead: Pick<FundlyLead, 'annual_revenue' | 'time_in_business' | 'urgency' | 'bank_account' | 'background_info'>
+  lead: Pick<FundlyLead, 'annual_revenue' | 'time_in_business' | 'urgency' | 'bank_account' | 'background_info' |
+    'annual_revenue_min_usd' | 'tib_months' | 'urgency_code' | 'bank_account_bool' | 'use_of_funds_norm'>
 ): EvaluationResult {
-  const range = parseCurrencyRange(lead.annual_revenue);
-  const annual = (range.min ?? parseCurrency(lead.annual_revenue) ?? 0);
+  // Prefer normalized fields when present
+  const annual = (lead.annual_revenue_min_usd ?? parseCurrencyRange(lead.annual_revenue).min ?? parseCurrency(lead.annual_revenue) ?? 0);
   const monthlyFromAnnual = annual > 0 ? annual / 12 : 0;
-  const timeMonths = monthsFromText(lead.time_in_business) || 0;
-  const bankOk = hasBankAccount(lead.bank_account);
+  const timeMonths = (lead.tib_months ?? monthsFromText(lead.time_in_business) ?? 0);
+  const bankOk = (typeof lead.bank_account_bool === 'boolean' ? lead.bank_account_bool : hasBankAccount(lead.bank_account));
+  const urgencyOk = lead.urgency_code ? urgencyWithinOneMonth(lead.urgency_code) : urgencyWithinOneMonth(lead.urgency);
 
   const programs: ProgramResult[] = [];
 
@@ -92,7 +94,6 @@ export function evaluatePrograms(
     const reasons: string[] = [];
     const monthlyOk = monthlyFromAnnual >= 10000; // >= $10k monthly per docs
     const tibOk = timeMonths >= 12;
-    const urgencyOk = urgencyWithinOneMonth(lead.urgency);
     if (!monthlyOk) reasons.push(`Needs >= $10k monthly (has ~$${Math.round(monthlyFromAnnual).toLocaleString()}/mo)`);
     if (!tibOk) reasons.push(`Needs >= 12 months in business (has ${timeMonths}m)`);
     if (!urgencyOk) reasons.push('Urgency must be within ~1 month');
