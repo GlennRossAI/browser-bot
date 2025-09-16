@@ -389,3 +389,103 @@ error: INSERT has more expressions than target columns
   line: '1025',
   routine: 'transformInsertRow'
 }
+[ERR] INSERT has more expressions than target columns
+error: INSERT has more expressions than target columns
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg/lib/client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:16:20)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:123:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:341:25) {
+  length: 117,
+  severity: 'ERROR',
+  code: '42601',
+  detail: undefined,
+  hint: undefined,
+  position: '631',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '1025',
+  routine: 'transformInsertRow'
+}
+[ERR] INSERT has more expressions than target columns
+error: INSERT has more expressions than target columns
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg/lib/client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:16:20)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:123:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:341:25) {
+  length: 117,
+  severity: 'ERROR',
+  code: '42601',
+  detail: undefined,
+  hint: undefined,
+  position: '631',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '1025',
+  routine: 'transformInsertRow'
+}
+[ERR] INSERT has more expressions than target columns
+error: INSERT has more expressions than target columns
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg/lib/client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:16:20)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:123:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:341:25) {
+  length: 117,
+  severity: 'ERROR',
+  code: '42601',
+  detail: undefined,
+  hint: undefined,
+  position: '631',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '1025',
+  routine: 'transformInsertRow'
+}
+[ERR] INSERT has more expressions than target columns
+error: INSERT has more expressions than target columns
+    at /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/pg/lib/client.js:545:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async query (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/utils/connection.ts:16:20)
+    at async insertLead (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/database/queries/leads.ts:123:18)
+    at async runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:341:25) {
+  length: 117,
+  severity: 'ERROR',
+  code: '42601',
+  detail: undefined,
+  hint: undefined,
+  position: '631',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'analyze.c',
+  line: '1025',
+  routine: 'transformInsertRow'
+}

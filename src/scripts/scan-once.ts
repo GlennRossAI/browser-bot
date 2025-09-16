@@ -15,7 +15,7 @@ import { emailSendingEnabled, SCAN_INTERVAL_SECONDS, DRY_RUN } from '../config.j
 import { sendLeadEmail } from '../email/send.js';
 import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
-import { withBackoff } from '../utils/backoff.js';
+import { withBackoff } from '../utils/backoff';
 import { sanitizeEmail } from '../utils/email_utils.js';
 import { normalizeUrgency, parseTibMonths, parseRevenueRange, normalizeUseOfFunds, normalizeBankAccount } from '../utils/normalize.js';
 
