@@ -145,3 +145,15 @@ The bot evaluates ALL qualification paths in `docs/requirements.md`. A lead pass
 - Urgency detection is case-insensitive and recognizes phrases like "ASAP", "Like Yesterday", "This Week", "This Month", "Within 30 days", and "Now".
 - Baseline campaign requires: $10k+/month, >= 12 months in business, urgency within ~1 month, bank account present.
 - Other programs (term loan, equipment financing, line of credit, SBA, bank LOC, working capital) are evaluated inclusively; if any matches, email is allowed (subject to new-today and prior-email checks).
+
+## Email Safeguards & Runtime Controls
+
+- Emails only send when `ALLOW_EMAIL_SEND=true` (set by the LaunchAgent). Manual runs do not send.
+- Once an email is sent, `email_sent_at` is persisted and will not be overwritten by future upserts, preventing duplicate sends.
+- Configure scan cadence via `SCAN_INTERVAL_SECONDS` (default 15). LaunchAgent sets this env to match its `StartInterval`.
+
+Environment variables to control behavior:
+
+- `ALLOW_EMAIL_SEND` — default `false`; set to `true` only in LaunchAgent env
+- `RUN_CONTEXT` — optional; set to `launchd` in LaunchAgent
+- `SCAN_INTERVAL_SECONDS` — default `15`; keep in sync with LaunchAgent `StartInterval`

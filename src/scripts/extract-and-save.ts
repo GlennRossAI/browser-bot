@@ -118,6 +118,14 @@ async function main() {
         nameAlt = (owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '')).trim();
       } catch {}
     }
+
+    if (!(nameAlt || '').trim()) {
+      // Fallback: provided specific CSS path
+      const specific = '#root > div > div.css-1v4ow96 > div.css-18088eb > div > div > div > div > div > div.chakra-stack.css-11n7j0t > div > div.chakra-stack.css-1f3yssc > div > div > p.chakra-text.css-21j35u';
+      try {
+        nameAlt = (await page.locator(specific).first().textContent())?.trim() || '';
+      } catch {}
+    }
     const email = await contactSection.locator('p:text-is("Email") + p').textContent() || "Unknown Email";
     const phone = await contactSection.locator('p:text-is("Phone") + p').textContent() || "Unknown Phone";
 

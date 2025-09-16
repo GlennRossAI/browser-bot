@@ -15,10 +15,11 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     )
     ON CONFLICT (email) DO UPDATE SET
       fundly_id = EXCLUDED.fundly_id,
+      -- Preserve prior email_sent_at unless explicitly set on upsert
+      email_sent_at = COALESCE(EXCLUDED.email_sent_at, fundly_leads.email_sent_at),
       contact_name = EXCLUDED.contact_name,
       phone = EXCLUDED.phone,
       background_info = EXCLUDED.background_info,
-      email_sent_at = EXCLUDED.email_sent_at,
       can_contact = EXCLUDED.can_contact,
       use_of_funds = EXCLUDED.use_of_funds,
       location = EXCLUDED.location,

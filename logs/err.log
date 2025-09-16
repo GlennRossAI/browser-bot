@@ -189,3 +189,58 @@ error: column "contact_name" of relation "fundly_leads" does not exist
   line: '1065',
   routine: 'checkInsertTargets'
 }
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}
+[ERR] locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('textbox', { name: 'Password' })
+
+    at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
+  name: 'TimeoutError'
+}

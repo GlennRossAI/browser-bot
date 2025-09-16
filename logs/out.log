@@ -76955,3 +76955,442 @@
 [INFO] Run started { runId: '3924' }
 [DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
 [INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 2
+[DBG] pipeline.ids [
+  '30377', '30374',
+  '30372', '30368',
+  '30367', '30366',
+  '30365', '30364',
+  '30363', '30361'
+]
+[INFO] No Reveal needed 
+[DBG] contact.labels [
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 6:54 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:37 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:15 PM',
+  'Sep 15, 2025, 6:15 PM',
+  'Email',
+  'folacute@yahoo.com',
+  'Phone',
+  '+12156097086',
+  "It's currently 01:52 PM in Pennsylvania.",
+  'Booked an appointment or having a great conversation? Stay on the phone with adegboyega and ask them for their 4 digit verification code to make them exclusive to you for 4 days so you can find them options',
+  'This stops all other agents from being able to access this lead’s contact info.',
+  'Send adegboyega a Verification Code via email',
+  'When you click the button below, we will send adegboyega an Email with a 4-Digit Code. Ask adegboyega to share the Code with you in the next step.',
+  'Validate adegboyega’s Verification Code',
+  'Enter the 4-Digit Code adegboyega gave you to make this lead exclusive to only you for the next 4 days.',
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Pennsylvania',
+  'Urgency',
+  'Like Yesterday',
+  'Time in Business',
+  '10 + Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Boutique',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more',
+  'Leaving feedback directly impacts the leads you see in your Timeline and helps the platform source you even better leads in the future!',
+  'Already sold!',
+  'You called and the lead picked up but said they no longer in market.',
+  'Got voicemail',
+  'You called and it rang, but the lead wasn’t around to take your call.',
+  'Something else?',
+  'Let us know!',
+  "Call didn't go through",
+  'Number doesn’t match who answered or the line is disconnected.',
+  'Annoyed Lead',
+  'Lead hung up after introduction.'
+]
+[DBG] contact.raw {
+  emailRaw: 'folacute@yahoo.com',
+  emailSanitized: 'folacute@yahoo.com',
+  phoneRaw: '+12156097086'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 4413, email: 'folacute@yahoo.com', fundly_id: '30377' }
+[DBG] filters.programs { anyQualified: true, qualified: [ 'equipment_financing' ] }
+[INFO] Email sent { to: 'folacute@yahoo.com' }
+[INFO] Run finished { runId: '3924', discovered: 1, saved: 1, emailed: 1 }
+[INFO] Run started { runId: '3925' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 2
+[DBG] pipeline.ids [
+  '30377', '30374',
+  '30372', '30368',
+  '30367', '30366',
+  '30365', '30364',
+  '30363', '30361'
+]
+[INFO] No Reveal needed 
+[DBG] contact.labels [
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Sep 15, 2025, 6:54 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:37 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:15 PM',
+  'Email',
+  'folacute@yahoo.com',
+  'Phone',
+  '+12156097086',
+  "It's currently 01:54 PM in Pennsylvania.",
+  'Booked an appointment or having a great conversation? Stay on the phone with adegboyega and ask them for their 4 digit verification code to make them exclusive to you for 4 days so you can find them options',
+  'This stops all other agents from being able to access this lead’s contact info.',
+  'Send adegboyega a Verification Code via email',
+  'When you click the button below, we will send adegboyega an Email with a 4-Digit Code. Ask adegboyega to share the Code with you in the next step.',
+  'Validate adegboyega’s Verification Code',
+  'Enter the 4-Digit Code adegboyega gave you to make this lead exclusive to only you for the next 4 days.',
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Pennsylvania',
+  'Urgency',
+  'Like Yesterday',
+  'Time in Business',
+  '10 + Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Boutique',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more',
+  'Leaving feedback directly impacts the leads you see in your Timeline and helps the platform source you even better leads in the future!',
+  'Already sold!',
+  'You called and the lead picked up but said they no longer in market.',
+  'Got voicemail',
+  'You called and it rang, but the lead wasn’t around to take your call.',
+  'Something else?',
+  'Let us know!',
+  "Call didn't go through",
+  'Number doesn’t match who answered or the line is disconnected.',
+  'Annoyed Lead',
+  'Lead hung up after introduction.'
+]
+[DBG] contact.raw {
+  emailRaw: 'folacute@yahoo.com',
+  emailSanitized: 'folacute@yahoo.com',
+  phoneRaw: '+12156097086'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 4413, email: 'folacute@yahoo.com', fundly_id: '30377' }
+[DBG] filters.programs { anyQualified: true, qualified: [ 'equipment_financing' ] }
+[INFO] Email sent { to: 'folacute@yahoo.com' }
+[INFO] Run finished { runId: '3925', discovered: 1, saved: 1, emailed: 1 }
+[INFO] Run started { runId: '3926' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30377', '30374',
+  '30372', '30368',
+  '30367', '30366',
+  '30365', '30364',
+  '30363', '30361'
+]
+[INFO] No Reveal needed 
+[DBG] contact.labels [
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Sep 15, 2025, 6:54 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:37 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:15 PM',
+  'Email',
+  'folacute@yahoo.com',
+  'Phone',
+  '+12156097086',
+  "It's currently 01:55 PM in Pennsylvania.",
+  'Booked an appointment or having a great conversation? Stay on the phone with adegboyega and ask them for their 4 digit verification code to make them exclusive to you for 4 days so you can find them options',
+  'This stops all other agents from being able to access this lead’s contact info.',
+  'Send adegboyega a Verification Code via email',
+  'When you click the button below, we will send adegboyega an Email with a 4-Digit Code. Ask adegboyega to share the Code with you in the next step.',
+  'Validate adegboyega’s Verification Code',
+  'Enter the 4-Digit Code adegboyega gave you to make this lead exclusive to only you for the next 4 days.',
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Pennsylvania',
+  'Urgency',
+  'Like Yesterday',
+  'Time in Business',
+  '10 + Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Boutique',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more',
+  'Leaving feedback directly impacts the leads you see in your Timeline and helps the platform source you even better leads in the future!',
+  'Already sold!',
+  'You called and the lead picked up but said they no longer in market.',
+  'Got voicemail',
+  'You called and it rang, but the lead wasn’t around to take your call.',
+  'Something else?',
+  'Let us know!',
+  "Call didn't go through",
+  'Number doesn’t match who answered or the line is disconnected.',
+  'Annoyed Lead',
+  'Lead hung up after introduction.'
+]
+[DBG] contact.raw {
+  emailRaw: 'folacute@yahoo.com',
+  emailSanitized: 'folacute@yahoo.com',
+  phoneRaw: '+12156097086'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 4413, email: 'folacute@yahoo.com', fundly_id: '30377' }
+[DBG] filters.programs { anyQualified: true, qualified: [ 'equipment_financing' ] }
+[INFO] Email sent { to: 'folacute@yahoo.com' }
+[INFO] Run finished { runId: '3926', discovered: 1, saved: 1, emailed: 1 }
+[INFO] Run started { runId: '3927' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Run started { runId: '3928' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Run started { runId: '3929' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Run started { runId: '3930' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Run started { runId: '3931' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Run started { runId: '3932' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30377', '30374',
+  '30372', '30368',
+  '30367', '30366',
+  '30365', '30364',
+  '30363', '30361'
+]
+[INFO] No Reveal needed 
+[DBG] contact.labels [
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Sep 15, 2025, 6:54 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:37 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:15 PM',
+  'Email',
+  'folacute@yahoo.com',
+  'Phone',
+  '+12156097086',
+  "It's currently 02:01 PM in Pennsylvania.",
+  'Booked an appointment or having a great conversation? Stay on the phone with adegboyega and ask them for their 4 digit verification code to make them exclusive to you for 4 days so you can find them options',
+  'This stops all other agents from being able to access this lead’s contact info.',
+  'Send adegboyega a Verification Code via email',
+  'When you click the button below, we will send adegboyega an Email with a 4-Digit Code. Ask adegboyega to share the Code with you in the next step.',
+  'Validate adegboyega’s Verification Code',
+  'Enter the 4-Digit Code adegboyega gave you to make this lead exclusive to only you for the next 4 days.',
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Pennsylvania',
+  'Urgency',
+  'Like Yesterday',
+  'Time in Business',
+  '10 + Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Boutique',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more',
+  'Leaving feedback directly impacts the leads you see in your Timeline and helps the platform source you even better leads in the future!',
+  'Already sold!',
+  'You called and the lead picked up but said they no longer in market.',
+  'Got voicemail',
+  'You called and it rang, but the lead wasn’t around to take your call.',
+  'Something else?',
+  'Let us know!',
+  "Call didn't go through",
+  'Number doesn’t match who answered or the line is disconnected.',
+  'Annoyed Lead',
+  'Lead hung up after introduction.'
+]
+[DBG] contact.raw {
+  emailRaw: 'folacute@yahoo.com',
+  emailSanitized: 'folacute@yahoo.com',
+  phoneRaw: '+12156097086'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 4413, email: 'folacute@yahoo.com', fundly_id: '30377' }
+[DBG] filters.programs { anyQualified: true, qualified: [ 'equipment_financing' ] }
+[INFO] Email sent { to: 'folacute@yahoo.com' }
+[INFO] Run finished { runId: '3932', discovered: 1, saved: 1, emailed: 1 }
+[INFO] Run started { runId: '3933' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 2
+[DBG] pipeline.ids [
+  '30377', '30376',
+  '30374', '30372',
+  '30368', '30367',
+  '30366', '30365',
+  '30364', '30363'
+]
+[INFO] No Reveal needed 
+[DBG] contact.labels [
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Sep 15, 2025, 7:30 PM',
+  'Sep 15, 2025, 6:54 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:47 PM',
+  'Sep 15, 2025, 6:37 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Sep 15, 2025, 6:27 PM',
+  'Email',
+  'folacute@yahoo.com',
+  'Phone',
+  '+12156097086',
+  "It's currently 02:02 PM in Pennsylvania.",
+  'Booked an appointment or having a great conversation? Stay on the phone with adegboyega and ask them for their 4 digit verification code to make them exclusive to you for 4 days so you can find them options',
+  'This stops all other agents from being able to access this lead’s contact info.',
+  'Send adegboyega a Verification Code via email',
+  'When you click the button below, we will send adegboyega an Email with a 4-Digit Code. Ask adegboyega to share the Code with you in the next step.',
+  'Validate adegboyega’s Verification Code',
+  'Enter the 4-Digit Code adegboyega gave you to make this lead exclusive to only you for the next 4 days.',
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Pennsylvania',
+  'Urgency',
+  'Like Yesterday',
+  'Time in Business',
+  '10 + Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Boutique',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more',
+  'Leaving feedback directly impacts the leads you see in your Timeline and helps the platform source you even better leads in the future!',
+  'Already sold!',
+  'You called and the lead picked up but said they no longer in market.',
+  'Got voicemail',
+  'You called and it rang, but the lead wasn’t around to take your call.',
+  'Something else?',
+  'Let us know!',
+  "Call didn't go through",
+  'Number doesn’t match who answered or the line is disconnected.',
+  'Annoyed Lead',
+  'Lead hung up after introduction.'
+]
+[DBG] contact.raw {
+  emailRaw: 'folacute@yahoo.com',
+  emailSanitized: 'folacute@yahoo.com',
+  phoneRaw: '+12156097086'
+}
+[DBG] background.len 134
+[DBG] db.savedLead { id: 4413, email: 'folacute@yahoo.com', fundly_id: '30377' }
+[DBG] filters.programs { anyQualified: true, qualified: [ 'equipment_financing' ] }
+[INFO] Run finished { runId: '3933', discovered: 1, saved: 1, emailed: 0 }
+[DBG] config.scanIntervalSeconds 15
+[INFO] Run started { runId: '3934' }
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30377', '30376',
+  '30374', '30372',
+  '30368', '30367',
+  '30366', '30365',
+  '30364', '30363'
+]
+[INFO] No Reveal needed 

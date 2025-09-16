@@ -20,6 +20,12 @@
       <string>/Users/jeffscottward/.nvm/versions/node/v22.15.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
       <key>HEADLESS</key>
       <string>true</string>
+      <key>ALLOW_EMAIL_SEND</key>
+      <string>true</string>
+      <key>RUN_CONTEXT</key>
+      <string>launchd</string>
+      <key>SCAN_INTERVAL_SECONDS</key>
+      <string>15</string>
     </dict>
     <key>RunAtLoad</key>
     <true/>

@@ -12,6 +12,7 @@ import { insertLead, updateEmailSentAt, emailAlreadySent, canContactByEmail } fr
 import { startRun, finishRun } from '../database/queries/run_logs.js';
 import { FundlyLeadInsert } from '../types/lead.js';
 import { passesRequirements, evaluatePrograms } from '../filters/threshold.js';
+import { emailSendingEnabled, SCAN_INTERVAL_SECONDS } from '../config.js';
 import { sendLeadEmail } from '../email/send.js';
 import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
@@ -186,6 +187,11 @@ async function runOnce() {
         nameRaw = owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '');
       } catch {}
     }
+    if (!nameRaw) {
+      // Fallback: provided specific CSS path
+      const specific = '#root > div > div.css-1v4ow96 > div.css-18088eb > div > div > div > div > div > div.chakra-stack.css-11n7j0t > div > div.chakra-stack.css-1f3yssc > div > div > p.chakra-text.css-21j35u';
+      try { nameRaw = (await page.locator(specific).first().textContent())?.trim() || ''; } catch {}
+    }
 
     const emailSanitized = sanitizeEmail(emailRaw);
     logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
@@ -245,11 +251,15 @@ async function runOnce() {
       const shouldEmail = newToday && thresholdOk && !already && allowed;
 
       if (shouldEmail) {
-        const res = await sendLeadEmail({ to: savedLead.email }).catch(() => null);
-        if (res && !(res as any).skipped) {
-          await updateEmailSentAt(savedLead.email, new Date());
-          emailed = 1;
-          logMsg('Email sent', { to: savedLead.email });
+        if (emailSendingEnabled()) {
+          const res = await sendLeadEmail({ to: savedLead.email }).catch(() => null);
+          if (res && !(res as any).skipped) {
+            await updateEmailSentAt(savedLead.email, new Date());
+            emailed = 1;
+            logMsg('Email sent', { to: savedLead.email });
+          }
+        } else {
+          logMsg('Email suppressed (not LaunchAgent context)', { to: savedLead.email });
         }
       }
     }
@@ -272,6 +282,8 @@ try {
   const invoked = pathToFileURL(process.argv[1]).href;
   if (import.meta.url === invoked) {
     runOnce().catch((e) => { console.error(e); process.exit(1); });
+    // Log scan interval for observability
+    try { logVar('config.scanIntervalSeconds', SCAN_INTERVAL_SECONDS); } catch {}
   }
 } catch {
   // Older Node or unusual env; just run
