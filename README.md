@@ -67,6 +67,8 @@ pnpm run save-lead
 # Runs login -> add latest to pipeline (if available) -> open first lead
 # -> extract + upsert to DB -> send email if new today and qualifies for any program
 pnpm run scan
+# Dry run (never sends or updates send state)
+pnpm run scan:dry
 # or
 npx tsx src/scripts/scan-once.ts
 ```

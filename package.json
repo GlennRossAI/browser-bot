@@ -10,6 +10,7 @@
     "save-lead": "tsx src/scripts/save-lead-to-db.ts",
     "run-migration": "tsx src/scripts/run-migration.ts",
     "scan": "tsx src/scripts/scan-once.ts",
+    "scan:dry": "DRY_RUN=true tsx src/scripts/scan-once.ts",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
