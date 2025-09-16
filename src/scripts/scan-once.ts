@@ -286,7 +286,7 @@ async function runOnce() {
       fundly_id: leadId,
       contact_name: (nameRaw || 'LOCKED').trim() || 'LOCKED',
       email: emailSanitized || '',
-      phone: (phoneRaw || 'LOCKED').trim() || 'LOCKED',
+      phone: (isExclusive ? 'LOCKED' : (phoneRaw || 'LOCKED')).trim() || 'LOCKED',
       background_info: backgroundInfo || 'LOCKED',
       email_sent_at: null,
       created_at: new Date().toISOString().replace('Z', '+00:00'),

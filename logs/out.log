@@ -1545,3 +1545,218 @@ Gregory
   '30370', '30369'
 ]
 [INFO] No Reveal needed 
+[DBG] contact.exclusive true
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:19 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 06:08 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: 'LOCKED',
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory
+[DBG] background.len 134
+[DBG] normalize.preview {
+  fundly_id: '30378',
+  contact_name: 'Gregory',
+  email: 'LOCKED',
+  phone: '+1 (555) 867-5309',
+  background_info: 'This person inquired for a business loan product similar to Line Of Credit options - How much they are looking for: $50,000 - $150,000',
+  email_sent_at: null,
+  created_at: '2025-09-16T22:08:33.532+00:00',
+  can_contact: true,
+  use_of_funds: 'Something Else',
+  location: 'Massachusetts',
+  urgency: 'This Week',
+  time_in_business: '5 - 10 Years',
+  bank_account: 'Business',
+  annual_revenue: '250K - 500K',
+  industry: 'Electrical company',
+  looking_for_min: '',
+  looking_for_max: '',
+  urgency_code: 'this_week',
+  tib_months: 60,
+  annual_revenue_min_usd: 250000,
+  annual_revenue_max_usd: 500000,
+  annual_revenue_usd_approx: 375000,
+  bank_account_bool: true,
+  use_of_funds_norm: 'other',
+  industry_norm: 'electrical company'
+}
+[DBG] db.savedLead { id: 4601, email: 'LOCKED', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30373',
+  '30372', '30371',
+  '30370', '30369'
+]
+[INFO] No Reveal needed 
+[DBG] contact.exclusive true
+[DBG] contact.labels [
+  'Sep 16, 2025, 1:21 PM',
+  'Sep 16, 2025, 11:25 AM',
+  'Sep 16, 2025, 10:26 AM',
+  'Sep 16, 2025, 10:09 AM',
+  'Sep 16, 2025, 7:27 AM',
+  'Sep 16, 2025, 6:19 AM',
+  'Sep 16, 2025, 6:10 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 5:34 AM',
+  'Sep 16, 2025, 3:53 AM',
+  'Sep 16, 2025, 12:32 AM',
+  'Sep 16, 2025, 12:10 AM',
+  'Sep 15, 2025, 11:46 PM',
+  'Sep 15, 2025, 11:24 PM',
+  'Sep 15, 2025, 11:09 PM',
+  'Sep 15, 2025, 11:04 PM',
+  'Sep 15, 2025, 10:13 PM',
+  'Sep 15, 2025, 9:44 PM',
+  'Sep 15, 2025, 9:20 PM',
+  'Sep 15, 2025, 9:14 PM',
+  'Until Sep 20 at 2:26 pm',
+  'Gregory is exclusively working with another agent.',
+  'Email',
+  'nevaGonna@giveyou.up',
+  'Phone',
+  '+1 (555) 867-5309',
+  "It's currently 06:11 PM in Massachusetts.",
+  'This is everything the lead shared with us about their interest!',
+  'Use of Funds',
+  'Something Else',
+  'Location',
+  'Massachusetts',
+  'Urgency',
+  'This Week',
+  'Time in Business',
+  '5 - 10 Years',
+  'Bank Account',
+  'Business',
+  'Annual Revenue',
+  '250K - 500K',
+  'Industry',
+  'Electrical company',
+  'Background Info',
+  'This person inquired for a business loan prod...Show more',
+  'Show more'
+]
+[DBG] contact.raw {
+  emailRaw: 'nevaGonna@giveyou.up',
+  emailSanitized: 'LOCKED',
+  phoneRaw: '+1 (555) 867-5309'
+}
+[DBG] contact.nameGuess Gregory
+[DBG] background.len 134
+[DBG] normalize.preview {
+  fundly_id: '30378',
+  contact_name: 'Gregory',
+  email: 'LOCKED',
+  phone: '+1 (555) 867-5309',
+  background_info: 'This person inquired for a business loan product similar to Line Of Credit options - How much they are looking for: $50,000 - $150,000',
+  email_sent_at: null,
+  created_at: '2025-09-16T22:11:00.615+00:00',
+  can_contact: true,
+  use_of_funds: 'Something Else',
+  location: 'Massachusetts',
+  urgency: 'This Week',
+  time_in_business: '5 - 10 Years',
+  bank_account: 'Business',
+  annual_revenue: '250K - 500K',
+  industry: 'Electrical company',
+  looking_for_min: '',
+  looking_for_max: '',
+  urgency_code: 'this_week',
+  tib_months: 60,
+  annual_revenue_min_usd: 250000,
+  annual_revenue_max_usd: 500000,
+  annual_revenue_usd_approx: 375000,
+  bank_account_bool: true,
+  use_of_funds_norm: 'other',
+  industry_norm: 'electrical company'
+}
+[DBG] db.savedLead { id: 4601, email: 'LOCKED', fundly_id: '30378' }
+[DBG] filters.programs {
+  anyQualified: true,
+  qualified: [
+    'business_term_loan',
+    'equipment_financing',
+    'line_of_credit',
+    'sba_loan',
+    'working_capital'
+  ]
+}
+[INFO] Run finished { discovered: 1, saved: 1, emailed: 0 }
+[INFO] Run started 
+[DBG] config.scanIntervalSeconds 15
+[DBG] env.ready { hasEmail: true, hasPass: true, hasDb: true }
+[INFO] Signed in and on dashboard 
+[DBG] feed.addedToPipeline 0
+[DBG] pipeline.ids [
+  '30378', '30377',
+  '30376', '30375',
+  '30374', '30373',
+  '30372', '30371',
+  '30370', '30369'
+]
+[INFO] No Reveal needed 
+[DBG] contact.exclusive true

@@ -46,7 +46,7 @@ async function extractFromPipeline(page: Page, pipelineId: string) {
   let phone = '';
   try { phone = await page.locator('p:text-is("Phone") + p').first().textContent() || ''; } catch {}
   if (!phone) { try { const tel = await page.locator('a[href^="tel:"]').first().getAttribute('href'); if (tel) phone = tel.replace(/^tel:/i, ''); } catch {} }
-  phone = phone || 'LOCKED';
+  phone = isExclusive ? 'LOCKED' : (phone || 'LOCKED');
 
   // Details
   const use_of_funds = await field('Use of Funds');
