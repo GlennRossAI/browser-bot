@@ -11,7 +11,7 @@ import { chromium } from 'playwright';
 import { insertLead, updateEmailSentAt, emailAlreadySent, canContactByEmail } from '../database/queries/leads.js';
 import { FundlyLeadInsert } from '../types/lead.js';
 import { passesRequirements, evaluatePrograms } from '../filters/threshold.js';
-import { emailSendingEnabled, SCAN_INTERVAL_SECONDS } from '../config.js';
+import { emailSendingEnabled, SCAN_INTERVAL_SECONDS, DRY_RUN } from '../config.js';
 import { sendLeadEmail } from '../email/send.js';
 import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
@@ -251,6 +251,9 @@ async function runOnce() {
       const shouldEmail = newToday && thresholdOk && !already && allowed;
 
       if (shouldEmail) {
+        if (DRY_RUN) {
+          logMsg('Email suppressed (dry run)', { to: savedLead.email });
+        }
         if (emailSendingEnabled()) {
           const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
           if (res && !(res as any).skipped) {

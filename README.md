@@ -153,9 +153,15 @@ The bot evaluates ALL qualification paths in `docs/requirements.md`. A lead pass
 - Emails only send when `ALLOW_EMAIL_SEND=true` (set by the LaunchAgent). Manual runs do not send.
 - Once an email is sent, `email_sent_at` is persisted and will not be overwritten by future upserts, preventing duplicate sends.
 - Configure scan cadence via `SCAN_INTERVAL_SECONDS` (default 15). LaunchAgent sets this env to match its `StartInterval`.
+- `DRY_RUN=true` fully disables sending and does not update `email_sent_at` — safe for local/manual testing.
 
 Environment variables to control behavior:
 
 - `ALLOW_EMAIL_SEND` — default `false`; set to `true` only in LaunchAgent env
 - `RUN_CONTEXT` — optional; set to `launchd` in LaunchAgent
 - `SCAN_INTERVAL_SECONDS` — default `15`; keep in sync with LaunchAgent `StartInterval`
+- `DRY_RUN` — default `false`; set to `true` for manual/local dry runs
+
+### Future: Email Send Ledger (optional)
+
+If you later want multi-campaign control, provider receipts, and a full audit trail, consider a `send_ledger` table keyed by `(email, campaign)` with `sent_at`, `provider_message_id`, and `template_version`. Current behavior (“send once ever”) is enforced via `email_sent_at` and is sufficient for now.
