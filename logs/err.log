@@ -244,3 +244,23 @@ Call log:
     at runOnce (/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts:48:59) {
   name: 'TimeoutError'
 }
+
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/utils/backoff.js' imported from /Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/scripts/scan-once.ts
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:860:10)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at resolveBase (file:///Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/tsx/dist/esm/index.mjs?1758046469539:2:3744)
+    at async resolveDirectory (file:///Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/tsx/dist/esm/index.mjs?1758046469539:2:4237)
+    at async resolve (file:///Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/node_modules/tsx/dist/esm/index.mjs?1758046469539:2:5355)
+    at async nextResolve (node:internal/modules/esm/hooks:748:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+    at async handleMessage (node:internal/modules/esm/worker:199:18) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///Users/jeffscottward/Documents/GitHub/GlenRoss/capital/fundly/browser-bot/src/utils/backoff.js'
+}
+
+Node.js v22.15.1

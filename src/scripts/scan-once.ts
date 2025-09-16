@@ -9,13 +9,13 @@
 import 'dotenv/config';
 import { chromium } from 'playwright';
 import { insertLead, updateEmailSentAt, emailAlreadySent, canContactByEmail } from '../database/queries/leads.js';
-import { startRun, finishRun } from '../database/queries/run_logs.js';
 import { FundlyLeadInsert } from '../types/lead.js';
 import { passesRequirements, evaluatePrograms } from '../filters/threshold.js';
 import { emailSendingEnabled, SCAN_INTERVAL_SECONDS } from '../config.js';
 import { sendLeadEmail } from '../email/send.js';
 import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
+import { withBackoff } from '../utils/backoff.js';
 import { sanitizeEmail } from '../utils/email_utils.js';
 
 function isTodayIso(iso?: string | null): boolean {
@@ -26,9 +26,7 @@ function isTodayIso(iso?: string | null): boolean {
 }
 
 async function runOnce() {
-  const run = await startRun({ script: 'scan-once', version: '1.0.0' });
-  try { lastRunId = Number((run as any).id) || null; } catch { lastRunId = null; }
-  logMsg('Run started', { runId: run.id });
+  logMsg('Run started');
   let discovered = 0;
   let saved = 0;
   let emailed = 0;
@@ -42,13 +40,15 @@ async function runOnce() {
     }
     logVar('env.ready', { hasEmail: !!FUNDLY_EMAIL, hasPass: !!FUNDLY_PASSWORD, hasDb: !!process.env.DATABASE_URL });
 
-    // Login
-    await page.goto('https://app.getfundly.com/login?redirectTo=/c/business');
-    await page.getByRole('textbox', { name: 'Email' }).fill(FUNDLY_EMAIL);
-    await page.getByRole('textbox', { name: 'Email' }).press('Enter');
-    await page.getByRole('textbox', { name: 'Password' }).fill(FUNDLY_PASSWORD);
-    await page.getByRole('button', { name: 'Login' }).click();
-    await page.waitForURL(/\/c\/business(\b|\/|\?|$)/, { timeout: 15000 });
+    // Login (with exponential backoff for transient rate limits/timeouts)
+    await withBackoff(async () => {
+      await page.goto('https://app.getfundly.com/login?redirectTo=/c/business');
+      await page.getByRole('textbox', { name: 'Email' }).fill(FUNDLY_EMAIL);
+      await page.getByRole('textbox', { name: 'Email' }).press('Enter');
+      await page.getByRole('textbox', { name: 'Password' }).fill(FUNDLY_PASSWORD);
+      await page.getByRole('button', { name: 'Login' }).click();
+      await page.waitForURL(/\/c\/business(\b|\/|\?|$)/, { timeout: 15000 });
+    }, { label: 'login' });
     await page.waitForSelector('text="Realtime Lead Timeline"', { timeout: 10000 }).catch(() => {});
     logMsg('Signed in and on dashboard');
 
@@ -75,7 +75,7 @@ async function runOnce() {
       }
       return total;
     }
-    const addedCount = await addNewLeads().catch(() => 0);
+    const addedCount = await withBackoff(() => addNewLeads(), { label: 'addToPipeline', maxRetries: 3 }).catch(() => 0);
     logVar('feed.addedToPipeline', addedCount);
 
     // Go to pipeline and pick first lead
@@ -252,7 +252,7 @@ async function runOnce() {
 
       if (shouldEmail) {
         if (emailSendingEnabled()) {
-          const res = await sendLeadEmail({ to: savedLead.email }).catch(() => null);
+          const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
           if (res && !(res as any).skipped) {
             await updateEmailSentAt(savedLead.email, new Date());
             emailed = 1;
@@ -264,12 +264,10 @@ async function runOnce() {
       }
     }
 
-    await finishRun(run.id, { status: 'success', discovered_count: discovered, saved_count: saved, emailed_count: emailed });
-    logMsg('Run finished', { runId: run.id, discovered, saved, emailed });
+    logMsg('Run finished', { discovered, saved, emailed });
   } catch (error) {
     const msg = (error as Error)?.message || String(error);
     logError(error);
-    await finishRun(run.id, { status: 'failure', discovered_count: discovered, saved_count: saved, emailed_count: emailed, error_message: msg });
     throw error;
   } finally {
     try { await browser.close(); } catch {}
@@ -290,13 +288,6 @@ try {
   runOnce().catch((e) => { console.error(e); process.exit(1); });
 }
 
-// Ensure we finalize an open run on unexpected crashes
-let lastRunId: number | null = null;
-async function finalizeOnCrash(reason: any) {
-  if (lastRunId) {
-    try { await finishRun(lastRunId, { status: 'failure', error_message: String(reason || 'process crash') }); }
-    catch {}
-  }
-}
-process.on('uncaughtException', finalizeOnCrash);
-process.on('unhandledRejection', finalizeOnCrash);
+// Crash logging still goes to file logs via logger
+process.on('uncaughtException', (e) => { try { logError(e); } catch {} });
+process.on('unhandledRejection', (e) => { try { logError(e); } catch {} });

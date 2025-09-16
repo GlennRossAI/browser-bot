@@ -71,12 +71,16 @@ pnpm run scan
 npx tsx src/scripts/scan-once.ts
 ```
 
-### Ensure Run Logs Table
+### Migrations
+
+Run migrations as needed (examples):
 
 ```bash
-pnpm run migrate:run-logs
-# or
-pnpm run run-migration src/database/migrations/003_create_run_logs.sql
+pnpm run run-migration src/database/migrations/001_add_looking_for_columns.sql
+pnpm run run-migration src/database/migrations/002_drop_looking_for_column.sql
+pnpm run run-migration src/database/migrations/004_add_looking_for_back.sql
+pnpm run run-migration src/database/migrations/005_add_contact_name.sql
+pnpm run run-migration src/database/migrations/006_drop_run_logs.sql  # removes DB run logs
 ```
 
 ### Database Operations
@@ -104,9 +108,7 @@ The `fundly_leads` table includes:
 - Funding requirements (looking_for_min, looking_for_max)
 - Metadata (created_at, email_sent_at, can_contact)
 
-Additional table for run logging:
-
-- `browser_bot_run_logs`: started_at, ended_at, status, discovered_count, saved_count, emailed_count, error_message, details
+Note: Database run-logs table was removed. Operational logs live under `logs/`.
 
 ## Environment Variables
 

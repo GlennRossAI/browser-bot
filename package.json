@@ -9,7 +9,6 @@
     "extract": "tsx src/scripts/extract-and-save.ts",
     "save-lead": "tsx src/scripts/save-lead-to-db.ts",
     "run-migration": "tsx src/scripts/run-migration.ts",
-    "migrate:run-logs": "tsx src/scripts/run-migration.ts src/database/migrations/003_create_run_logs.sql",
     "scan": "tsx src/scripts/scan-once.ts",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
