@@ -164,6 +164,45 @@ Environment variables to control behavior:
 - `SCAN_INTERVAL_SECONDS` — default `15`; keep in sync with LaunchAgent `StartInterval`
 - `DRY_RUN` — default `false`; set to `true` for manual/local dry runs
 
+## Data Normalization
+
+To avoid regex/casing/range pitfalls, the app normalizes scraped fields at ingestion and stores them alongside the originals:
+
+- `urgency_code`: one of `asap|like_yesterday|this_week|this_month|within_30_days|now|unknown`
+- `tib_months`: integer months derived from “Time in Business”
+- `annual_revenue_min_usd`/`annual_revenue_max_usd`/`annual_revenue_usd_approx`: parsed from ranges and K/M suffixes
+- `bank_account_bool`: boolean when “Business/Yes” are present
+- `use_of_funds_norm`: lowercase category like `equipment|expansion|payroll|debt_refi|other`
+- `industry_norm`: lowercased industry string
+
+Filters primarily use normalized columns for robust matching, with legacy text as fallback.
+
+### Migrations and Backfill
+
+```bash
+pnpm run run-migration src/database/migrations/008_add_normalized_columns.sql
+npx tsx src/scripts/backfill-normalized.ts
+```
+
+## Email Templates by Program
+
+Program-specific templates live under `src/email/templates/` and embed the common body using `{{GENERAL}}`:
+
+- `equipment_financing.html`
+- `line_of_credit.html`
+- `working_capital.html`
+- `sba_loan.html`
+- `business_term_loan.html`
+- `bank_loc.html`
+- `first_campaign.html` (baseline fast funding)
+
+Selection prefers a template that matches `use_of_funds` (e.g., equipment) when eligible;
+otherwise it falls back to a priority list.
+
+### Future Option: Send Ledger
+
+If you later want multi-campaign control, provider receipts, and auditing, consider a `send_ledger` table keyed by `(email, campaign)` with `sent_at`, `provider_message_id`, and `template_version`. Current “send once ever” behavior is enforced by `email_sent_at`.
+
 ### Future: Email Send Ledger (optional)
 
 If you later want multi-campaign control, provider receipts, and a full audit trail, consider a `send_ledger` table keyed by `(email, campaign)` with `sent_at`, `provider_message_id`, and `template_version`. Current behavior (“send once ever”) is enforced via `email_sent_at` and is sufficient for now.
