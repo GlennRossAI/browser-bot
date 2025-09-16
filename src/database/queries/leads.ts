@@ -118,8 +118,14 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     RETURNING *;
   `;
 
-  const result = await query(sql, [...commonValues, (lead as any).filter_success ?? null]);
-  return result.rows[0] as FundlyLead;
+  try {
+    const result = await query(sql, [...commonValues, (lead as any).filter_success ?? null]);
+    return result.rows[0] as FundlyLead;
+  } catch (e) {
+    // Lightweight logging to out.log via stderr piping
+    console.error('INSERT_FAILED', { message: (e as any)?.message, code: (e as any)?.code, sql });
+    throw e;
+  }
 }
 
 export async function getLeadByEmail(email: string): Promise<FundlyLead | null> {
