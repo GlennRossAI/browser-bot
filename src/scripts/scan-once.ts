@@ -11,7 +11,7 @@ import { chromium } from 'playwright';
 import { insertLead, updateEmailSentAt, emailAlreadySent, canContactByEmail } from '../database/queries/leads.js';
 import { startRun, finishRun } from '../database/queries/run_logs.js';
 import { FundlyLeadInsert } from '../types/lead.js';
-import { passesRequirements } from '../filters/threshold.js';
+import { passesRequirements, evaluatePrograms } from '../filters/threshold.js';
 import { sendLeadEmail } from '../email/send.js';
 import { closePool } from '../database/utils/connection.js';
 import { logMsg, logVar, logError } from '../utils/logger.js';
@@ -234,9 +234,12 @@ async function runOnce() {
       saved = 1;
       logVar('db.savedLead', { id: savedLead.id, email: savedLead.email, fundly_id: (savedLead as any).fundly_id });
 
-      // Decision: new today + passes requirements + not emailed yet + allowed to contact
+      // Decision: new today + qualifies for any program + not emailed yet + allowed to contact
       const newToday = isTodayIso(savedLead.created_at);
-      const thresholdOk = passesRequirements(savedLead);
+      const evalRes = evaluatePrograms(savedLead);
+      const qualified = evalRes.programs.filter(p => p.eligible).map(p => p.key);
+      logVar('filters.programs', { anyQualified: evalRes.anyQualified, qualified });
+      const thresholdOk = evalRes.anyQualified;
       const already = await emailAlreadySent(savedLead.email);
       const allowed = await canContactByEmail(savedLead.email);
       const shouldEmail = newToday && thresholdOk && !already && allowed;
