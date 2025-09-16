@@ -48,17 +48,14 @@ async function extractFromPipeline(page: Page, pipelineId: string) {
   }
 
   // Contact info
-  let emailRaw = '';
-  try { emailRaw = await page.locator('p:text-is("Email") + p').first().textContent() || ''; } catch {}
-  if (!emailRaw) { try { const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href'); if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0]; } catch {} }
+  let emailRaw = await field('Email');
+  if (!emailRaw || emailRaw === 'LOCKED') { try { const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href'); if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0]; } catch {} }
   const email = sanitizeEmail(emailRaw) || 'LOCKED';
-  let name = '';
-  try { name = await page.locator('p:text-is("Name") + p').first().textContent() || ''; } catch {}
-  if (!name) { try { name = await page.locator('p:text-is("Full Name") + p').first().textContent() || ''; } catch {} }
+  let name = await field('Name');
+  if (!name || name === 'LOCKED') { try { name = await page.locator('p:text-is("Full Name") + p').first().textContent() || ''; } catch {} }
   name = cleanName(name);
-  let phone = '';
-  try { phone = await page.locator('p:text-is("Phone") + p').first().textContent() || ''; } catch {}
-  if (!phone) { try { const tel = await page.locator('a[href^="tel:"]').first().getAttribute('href'); if (tel) phone = tel.replace(/^tel:/i, ''); } catch {} }
+  let phone = await field('Phone');
+  if (!phone || phone === 'LOCKED') { try { const tel = await page.locator('a[href^="tel:"]').first().getAttribute('href'); if (tel) phone = tel.replace(/^tel:/i, ''); } catch {} }
   phone = isExclusive ? 'LOCKED' : (phone || 'LOCKED');
 
   // Details
@@ -117,7 +114,9 @@ async function extractFromPipeline(page: Page, pipelineId: string) {
   const qualified = evalRes.programs.filter(p => p.eligible).map(p => p.key);
   lead.filter_success = qualified.length ? qualified[0] : 'FAIL_ALL';
 
+  console.log('Preview lead:', JSON.stringify(lead));
   await insertLead(lead);
+  console.log('Inserted lead id:', pipelineId);
 }
 
 async function main() {

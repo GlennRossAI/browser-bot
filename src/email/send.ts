@@ -18,29 +18,31 @@ function getTransporter() {
 }
 
 function buildEmailHtml(templateKey?: string) {
-  const candidates = [] as string[];
+  // Load the base general template first
+  let general = '';
+  try {
+    general = fs.readFileSync(path.resolve(process.cwd(), 'src/email/general-template.html'), 'utf8');
+  } catch {}
+  if (!general) general = 'Thank you for reaching out regarding funding opportunities.';
+
+  // If a program template is provided, inject it into {{PROGRAM_FIT}} placeholder
   if (templateKey) {
-    candidates.push(`src/email/templates/${templateKey}.html`);
-  }
-  candidates.push('src/email/general-template.html');
-  let body = '';
-  for (const rel of candidates) {
-    const tplPath = path.resolve(process.cwd(), rel);
     try {
-      body = fs.readFileSync(tplPath, 'utf8');
-      break;
-    } catch {}
+      const programBlock = fs.readFileSync(path.resolve(process.cwd(), `src/email/templates/${templateKey}.html`), 'utf8');
+      if (general.includes('{{PROGRAM_FIT}}')) {
+        general = general.replace('{{PROGRAM_FIT}}', programBlock);
+      } else {
+        // Fallback: append program fit at the top if placeholder missing
+        general = programBlock + general;
+      }
+    } catch {
+      // If program template missing, strip placeholder
+      general = general.replace('{{PROGRAM_FIT}}', '');
+    }
+  } else {
+    general = general.replace('{{PROGRAM_FIT}}', '');
   }
-  if (!body) body = 'Thank you for reaching out regarding funding opportunities.';
-  // Allow program templates to include {{GENERAL}} placeholder to embed the common body
-  if (templateKey && body.includes('{{GENERAL}}')) {
-    try {
-      const general = fs.readFileSync(path.resolve(process.cwd(), 'src/email/general-template.html'), 'utf8');
-      body = body.replace('{{GENERAL}}', general);
-    } catch {}
-  }
-  const greeting = `<p>Hi there,</p>`;
-  return greeting + body;
+  return general;
 }
 
 export async function sendLeadEmail({ to, programKey }: { to: string; programKey?: string }) {
