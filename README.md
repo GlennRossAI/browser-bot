@@ -1,6 +1,6 @@
 # Browser Bot - Fundly Data Extraction
 
-Playwright automation for extracting lead data from Fundly and saving to Neon database. Includes headless “scan once” runner, email sending (Gmail API preferred, SMTP fallback), filter logic per requirements, and a LaunchAgent to run every 10 seconds.
+Playwright automation for extracting lead data from Fundly and saving to Neon database. Includes headless “scan once” runner, email sending (Gmail API preferred, SMTP fallback), inclusive multi-program filter logic, and a LaunchAgent to run every 15 seconds.
 
 ## Project Structure
 
@@ -45,6 +45,8 @@ cp .env.example .env
 pnpm run run-migration src/database/migrations/001_add_looking_for_columns.sql
 pnpm run run-migration src/database/migrations/002_drop_looking_for_column.sql
 pnpm run run-migration src/database/migrations/003_create_run_logs.sql
+pnpm run run-migration src/database/migrations/004_add_looking_for_back.sql
+pnpm run run-migration src/database/migrations/005_add_contact_name.sql
 ```
 
 ## Usage
@@ -63,7 +65,7 @@ pnpm run save-lead
 
 ```bash
 # Runs login -> add latest to pipeline (if available) -> open first lead
-# -> extract + upsert to DB -> send email if new today and passes filters
+# -> extract + upsert to DB -> send email if new today and qualifies for any program
 pnpm run scan
 # or
 npx tsx src/scripts/scan-once.ts
@@ -97,7 +99,7 @@ pnpm run save-lead data/extracted-lead-data.json
 
 The `fundly_leads` table includes:
 
-- Lead contact information (email, phone)
+- Lead contact information (contact_name, email, phone)
 - Lead details (location, urgency, industry, etc.)
 - Funding requirements (looking_for_min, looking_for_max)
 - Metadata (created_at, email_sent_at, can_contact)
@@ -135,3 +137,11 @@ Additionally, JSONL logs are written to:
 ```
 
 If you update the script or env, unload and load again to apply changes.
+
+## Filters & Program Eligibility
+
+The bot evaluates ALL qualification paths in `docs/requirements.md`. A lead passes if it matches at least one program based on fields we can scrape (annual revenue, time in business, urgency, bank account). Criteria like FICO and detailed documentation are validated later and do not block outreach.
+
+- Urgency detection is case-insensitive and recognizes phrases like "ASAP", "Like Yesterday", "This Week", "This Month", "Within 30 days", and "Now".
+- Baseline campaign requires: $10k+/month, >= 12 months in business, urgency within ~1 month, bank account present.
+- Other programs (term loan, equipment financing, line of credit, SBA, bank LOC, working capital) are evaluated inclusively; if any matches, email is allowed (subject to new-today and prior-email checks).

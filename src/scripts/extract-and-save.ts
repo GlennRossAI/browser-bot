@@ -18,8 +18,11 @@ async function main() {
   const page = await browser.newPage();
 
   try {
-    const FUNDLY_EMAIL = process.env.FUNDLY_EMAIL || "jeff@glenross.ai";
-    const FUNDLY_PASSWORD = process.env.FUNDLY_PASSWORD || "jotcyv-ryzvy8-Quzjih";
+    const FUNDLY_EMAIL = process.env.FUNDLY_EMAIL || process.env.FUNDLY_USER_EMAIL || '';
+    const FUNDLY_PASSWORD = process.env.FUNDLY_PASSWORD || process.env.FUNDLY_USER_PASS || '';
+    if (!FUNDLY_EMAIL || !FUNDLY_PASSWORD) {
+      throw new Error('Missing FUNDLY_EMAIL/FUNDLY_PASSWORD in environment');
+    }
 
     console.log("🔄 Logging into Fundly...");
 
@@ -92,9 +95,29 @@ async function main() {
     // Extract email, phone, and name
     const contactSection = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
     // Try stable label-next-sibling pattern
-    const nameFromLabel = await contactSection.locator('p:text-is("Name") + p').textContent().catch(() => '');
+    const nameFromLabel = await contactSection.locator('p:text-is("Name") + p').textContent().then(v => (v || '').trim()).catch(() => '');
     // Fallbacks for different UI variants
-    const nameAlt = nameFromLabel || await contactSection.locator('p:text-is("Full Name") + p').textContent().catch(() => '') || '';
+    let nameAlt = nameFromLabel || await contactSection.locator('p:text-is("Full Name") + p').textContent().then(v => (v || '').trim()).catch(() => '') || '';
+    if (!(nameAlt || '').trim()) {
+      // Generalized label scan
+      try {
+        const pairs = await contactSection.locator('p').evaluateAll((nodes: Element[]) => {
+          const out: Array<{ label: string; value: string }> = [];
+          for (const el of nodes) {
+            const label = (el.textContent || '').trim();
+            const next = (el.nextElementSibling as HTMLElement | null)?.textContent || '';
+            out.push({ label, value: next.trim() });
+          }
+          return out;
+        }) as Array<{ label: string; value: string }>;
+        const pick = (rx: RegExp) => pairs.find((p) => rx.test(p.label.toLowerCase()))?.value || '';
+        const owner = pick(/^(owner|business owner|primary owner|applicant|contact name)$/i);
+        const nameLbl = pick(/^(name|full name|contact name)$/i);
+        const first = pick(/^first\s*name$/i);
+        const last = pick(/^last\s*name$/i);
+        nameAlt = (owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '')).trim();
+      } catch {}
+    }
     const email = await contactSection.locator('p:text-is("Email") + p').textContent() || "Unknown Email";
     const phone = await contactSection.locator('p:text-is("Phone") + p').textContent() || "Unknown Phone";
 

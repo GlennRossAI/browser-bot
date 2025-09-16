@@ -1,156 +1,53 @@
-# LexingtonCap Fundly Lead Requirements
+# LexingtonCap Fundly Lead Requirements (Implemented)
 
-## First Test Campaign Requirements
+This document defines ALL qualification paths our bot evaluates. The bot emails a lead when it qualifies for at least one path below. Criteria we cannot scrape (e.g., FICO) are noted and validated later in the sales process.
 
-### Minimum Qualification Criteria
+## Baseline Campaign — Fast Funding
 
-#### **Revenue Requirements**
+- Revenue: Monthly >= $10,000 (≈ Annual >= $120,000)
+- Time in Business: >= 12 months
+- Urgency: within ~1 month (e.g., "ASAP", "Like Yesterday", "This Week", "This Month")
+- Bank Account: business account present
+- Documentation: 4 months statements, soft pull (validated later)
 
-- **Monthly Revenue**: >= $10,000
-
-#### **Business Maturity**
-
-- **Time in Business**: >= 1 year
-- Must have established operational history
-
-#### **Urgency Level**
-
-- **Timeline**: <= 1 month
-- Looking for immediate to short-term funding needs
-- Excludes leads with longer-term planning horizons
-
-#### **Documentation Requirements**
-
-- **Bank Statements**: 4 months minimum
-- **Soft Pull Credit Report**
-- Must be able to provide recent financial documentation
-- Business bank account statements required
-
-## Other Tests to be Done
-
-Framework for other financing tests that we will implement at a later point.
+## Program Paths
 
 ### Business Term Loan
-
-**Unique Benefits:**
-
-- 1 to 15 year terms
-- Monthly payments
-- APR starting at 6%
-
-**Paperwork Needed:**
-
-- 1 page application
-- 6 month bank statements
-- 2 year business tax return
-- 1 year personal tax return
-
-**Qualifications:**
-
-- 2 years time in business
-- $250,000+ gross annual revenue
-- 650+ FICO
+- Time in Business: >= 24 months
+- Annual Revenue: >= $250,000
+- FICO: 650+ (collected later)
+- Paperwork: 1-page app, 6 months bank statements, 2 years business tax, 1 year personal tax
 
 ### Equipment Financing
-
-**Unique Benefits:**
-
-- 3 to 7 year term
-- Fixed rates starting at 6%
-- Monthly payments
-- Can fully write off equipment as expense for tax purposes
-
-**Paperwork Needed:**
-
-- 1 page application
-- 6 month bank statements or equipment invoice/quote
-
-**Qualifications:**
-
-- No minimum time in business
-- No minimum annual revenue
-- 600+ FICO
+- Time in Business: no minimum
+- Annual Revenue: no minimum
+- FICO: 600+ (collected later)
+- Paperwork: 1-page app, 6 months bank statements or equipment invoice/quote
 
 ### Line of Credit
-
-**Unique Benefits:**
-
-- 6 to 24 month terms available
-- Weekly or monthly payments
-- Same day funding up to $750k
-- True revolving line
-
-**Paperwork Needed:**
-
-- 1 page application
-- 4 month bank statements
-
-**Qualifications:**
-
-- 6 months time in business
-- $120,000+ gross annual revenue
-- 600+ FICO
+- Time in Business: >= 6 months
+- Annual Revenue: >= $120,000
+- FICO: 600+ (collected later)
+- Paperwork: 1-page app, 4 months bank statements
 
 ### SBA Loan
-
-**Unique Benefits:**
-
-- 5 to 30 year terms
-- Government-backed funds
-- Rates starting at prime
-
-**Paperwork Needed:**
-
-- 1 page application
-- 6 month bank statements/personal tax returns
-- 2 years business tax returns
-- P&L + balance sheet year to date
-- Business debt schedule
-
-**Qualifications:**
-
-- 2 years time in business
-- $120,000+ gross annual revenue
-- 675+ FICO
+- Time in Business: >= 24 months
+- Annual Revenue: >= $120,000
+- FICO: 675+ (collected later)
+- Paperwork: 1-page app, 6 months bank/personal returns, 2 years business tax, YTD P&L + balance sheet, debt schedule
 
 ### Bank Line of Credit
-
-**Unique Benefits:**
-
-- Unlimited revolving line
-- Fixed monthly payments
-- WSJ prime rate +2%
-- Gain access to bank relationships
-
-**Paperwork Needed:**
-
-- 1 page application
-- 4 month bank statements
-- Tri-merge credit report
-
-**Qualifications:**
-
-- 3 years time in business
-- Gross $350,000 on business tax return
-- 700+ FICO
+- Time in Business: >= 36 months
+- Annual Revenue: >= $350,000 (proxy for tax return gross)
+- FICO: 700+ (collected later)
+- Paperwork: 1-page app, 4 months bank statements, tri-merge credit
 
 ### Working Capital Loan
+- Time in Business: >= 3 months
+- Annual Revenue: >= $100,000
+- FICO: no minimum
+- Paperwork: 1-page app, 4 months bank statements
 
-**Unique Benefits:**
-
-- 24 to 48 hour funding
-- 6 to 36 month terms
-- Lien/Judgments OK
-- Bad Credit OK
-- No minimum FICO
-
-**Paperwork Needed:**
-
-- 1 page application
-- 4 month bank statements
-
-**Qualifications:**
-
-- 3 months time in business
-- $100,000 gross annual revenue
-- No minimum FICO required
+Notes
+- FICO and specific document checks are deferred until later in the funnel and do not block email outreach.
+- If at least one program’s data-driven criteria match, the bot proceeds with email (subject to “new today” and prior-email checks).

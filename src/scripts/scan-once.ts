@@ -158,13 +158,38 @@ async function runOnce() {
     }
     // Extract contact name via multiple strategies
     let nameRaw = '';
-    try { nameRaw = await page.locator('p:text-is("Name") + p').first().textContent() || ''; } catch {}
+    try { nameRaw = (await page.locator('p:text-is("Name") + p').first().textContent()) || ''; } catch {}
+    nameRaw = (nameRaw || '').trim();
     if (!nameRaw) {
-      try { nameRaw = await page.locator('p:text-is("Full Name") + p').first().textContent() || ''; } catch {}
+      try { nameRaw = (await page.locator('p:text-is("Full Name") + p').first().textContent()) || ''; } catch {}
+      nameRaw = (nameRaw || '').trim();
+    }
+    if (!nameRaw) {
+      // Scan the contact panel for label/value pairs and infer likely name fields
+      try {
+        const contactPanel = page.locator('[role="tabpanel"][aria-labelledby*="tab-0"]');
+        const pairs = await contactPanel.locator('p').evaluateAll((nodes: Element[]) => {
+          const out: Array<{ label: string; value: string }> = [];
+          for (const el of nodes) {
+            const label = (el.textContent || '').trim();
+            const next = (el.nextElementSibling as HTMLElement | null)?.textContent || '';
+            out.push({ label, value: next.trim() });
+          }
+          return out;
+        }) as Array<{ label: string; value: string }>;
+        try { logVar('contact.labels', pairs.map(p => p.label)); } catch {}
+        const pick = (rx: RegExp) => pairs.find((p) => rx.test(p.label.toLowerCase()))?.value || '';
+        const owner = pick(/^(owner|business owner|primary owner|applicant|contact name)$/i);
+        const nameLbl = pick(/^(name|full name|contact name)$/i);
+        const first = pick(/^first\s*name$/i);
+        const last = pick(/^last\s*name$/i);
+        nameRaw = owner || nameLbl || ((first || last) ? `${first} ${last}`.trim() : '');
+      } catch {}
     }
 
     const emailSanitized = sanitizeEmail(emailRaw);
     logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
+    try { if (nameRaw) logVar('contact.nameGuess', nameRaw); } catch {}
 
     // Expand background
     try { await page.getByText('Show more').click({ timeout: 2000 }); } catch {}
