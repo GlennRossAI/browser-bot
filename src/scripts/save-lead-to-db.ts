@@ -29,6 +29,7 @@ async function main() {
       email_sent_at: jsonData.email_sent_at ? new Date(jsonData.email_sent_at) : null,
       created_at: jsonData.created_at,
       can_contact: jsonData.can_contact ?? true,
+      locked: jsonData.locked ?? false,
       use_of_funds: jsonData.use_of_funds || '',
       location: jsonData.location || '',
       urgency: jsonData.urgency || '',

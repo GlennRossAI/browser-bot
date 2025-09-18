@@ -138,8 +138,8 @@ async function main() {
         nameAlt = cleanName((await page.locator(specific).first().textContent()) || '');
       } catch {}
     }
-    const email = await contactSection.locator('p:text-is("Email") + p').textContent() || "Unknown Email";
-    const phone = await contactSection.locator('p:text-is("Phone") + p').textContent() || "Unknown Phone";
+    const email = await contactSection.locator('p:text-is("Email") + p').textContent() || '';
+    const phone = await contactSection.locator('p:text-is("Phone") + p').textContent() || '';
 
     // Expand background info
     try {
@@ -178,12 +178,13 @@ async function main() {
     const leadData: FundlyLeadInsert = {
       fundly_id: leadId,
       contact_name: (nameAlt || '').trim(),
-      email: (email.trim() || (isExclusive ? 'LOCKED' : '')),
-      phone: phone.trim(),
+      email: (isExclusive ? null : (email.trim() || null)),
+      phone: (isExclusive ? null : (phone.trim() || null)),
       background_info: backgroundInfo,
       email_sent_at: null,
       created_at: new Date().toISOString().replace("Z", "+00:00"),
       can_contact: true,
+      locked: isExclusive,
       use_of_funds: (isExclusive && !uofRaw) ? 'LOCKED' : uofRaw,
       location: (isExclusive && !locRaw) ? 'LOCKED' : locRaw,
       urgency: (isExclusive && !urgRaw) ? 'LOCKED' : urgRaw,

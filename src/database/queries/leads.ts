@@ -14,6 +14,8 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     lead.email_sent_at,
     lead.created_at || new Date().toISOString(),
     lead.can_contact,
+    // locked flag (exclusive contact info)
+    (lead as any).locked ?? false,
     lead.use_of_funds,
     lead.location,
     lead.urgency,
@@ -35,66 +37,33 @@ export async function insertLead(lead: FundlyLeadInsert): Promise<FundlyLead> {
     (lead as any).industry_norm ?? null
   ];
 
-  // Consider email only if it looks like an email address
-  const upsertOnEmail = !!(lead.email && /@/.test(String(lead.email)));
-  const sql = upsertOnEmail ? `
+  const sql = `
     INSERT INTO fundly_leads (
       fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
-      can_contact, use_of_funds, location, urgency, time_in_business,
+      can_contact, locked, use_of_funds, location, urgency, time_in_business,
       bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max,
       urgency_code, tib_months, annual_revenue_min_usd, annual_revenue_max_usd, annual_revenue_usd_approx,
       bank_account_bool, use_of_funds_norm, industry_norm,
       filter_success
     ) VALUES (
       $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-      $19, $20, $21, $22, $23, $24, $25, $26, $27
-    )
-    ON CONFLICT (email) DO UPDATE SET
-      fundly_id = EXCLUDED.fundly_id,
-      email_sent_at = COALESCE(EXCLUDED.email_sent_at, fundly_leads.email_sent_at),
-      contact_name = EXCLUDED.contact_name,
-      phone = EXCLUDED.phone,
-      background_info = EXCLUDED.background_info,
-      can_contact = EXCLUDED.can_contact,
-      use_of_funds = EXCLUDED.use_of_funds,
-      location = EXCLUDED.location,
-      urgency = EXCLUDED.urgency,
-      time_in_business = EXCLUDED.time_in_business,
-      bank_account = EXCLUDED.bank_account,
-      annual_revenue = EXCLUDED.annual_revenue,
-      industry = EXCLUDED.industry,
-      looking_for = EXCLUDED.looking_for,
-      looking_for_min = EXCLUDED.looking_for_min,
-      looking_for_max = EXCLUDED.looking_for_max,
-      urgency_code = COALESCE(EXCLUDED.urgency_code, fundly_leads.urgency_code),
-      tib_months = COALESCE(EXCLUDED.tib_months, fundly_leads.tib_months),
-      annual_revenue_min_usd = COALESCE(EXCLUDED.annual_revenue_min_usd, fundly_leads.annual_revenue_min_usd),
-      annual_revenue_max_usd = COALESCE(EXCLUDED.annual_revenue_max_usd, fundly_leads.annual_revenue_max_usd),
-      annual_revenue_usd_approx = COALESCE(EXCLUDED.annual_revenue_usd_approx, fundly_leads.annual_revenue_usd_approx),
-      bank_account_bool = COALESCE(EXCLUDED.bank_account_bool, fundly_leads.bank_account_bool),
-      use_of_funds_norm = COALESCE(EXCLUDED.use_of_funds_norm, fundly_leads.use_of_funds_norm),
-      industry_norm = COALESCE(EXCLUDED.industry_norm, fundly_leads.industry_norm),
-      created_at = CASE WHEN fundly_leads.created_at IS NULL THEN EXCLUDED.created_at ELSE fundly_leads.created_at END,
-      filter_success = COALESCE(EXCLUDED.filter_success, fundly_leads.filter_success)
-    RETURNING *;
-  ` : `
-    INSERT INTO fundly_leads (
-      fundly_id, contact_name, email, phone, background_info, email_sent_at, created_at,
-      can_contact, use_of_funds, location, urgency, time_in_business,
-      bank_account, annual_revenue, industry, looking_for, looking_for_min, looking_for_max,
-      urgency_code, tib_months, annual_revenue_min_usd, annual_revenue_max_usd, annual_revenue_usd_approx,
-      bank_account_bool, use_of_funds_norm, industry_norm,
-      filter_success
-    ) VALUES (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
-      $19, $20, $21, $22, $23, $24, $25, $26, $27
+      $19, $20, $21, $22, $23, $24, $25, $26, $27, $28
     )
     ON CONFLICT (fundly_id) DO UPDATE SET
+      email = CASE
+        WHEN EXCLUDED.email IS NULL THEN fundly_leads.email
+        WHEN EXISTS (
+          SELECT 1 FROM fundly_leads f2
+          WHERE f2.id <> fundly_leads.id AND f2.email IS NOT NULL AND lower(f2.email) = lower(EXCLUDED.email)
+        ) THEN fundly_leads.email
+        ELSE EXCLUDED.email
+      END,
       email_sent_at = COALESCE(EXCLUDED.email_sent_at, fundly_leads.email_sent_at),
       contact_name = EXCLUDED.contact_name,
       phone = EXCLUDED.phone,
       background_info = EXCLUDED.background_info,
       can_contact = EXCLUDED.can_contact,
+      locked = (COALESCE(EXCLUDED.locked, false) OR COALESCE(fundly_leads.locked, false)),
       use_of_funds = EXCLUDED.use_of_funds,
       location = EXCLUDED.location,
       urgency = EXCLUDED.urgency,

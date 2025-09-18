@@ -234,8 +234,7 @@ async function runOnce() {
       try { nameRaw = cleanName((await page.locator(specific).first().textContent()) || ''); } catch {}
     }
 
-    let emailSanitized = sanitizeEmail(emailRaw);
-    if (!emailSanitized) emailSanitized = 'LOCKED';
+    let emailSanitized = isExclusive ? null : sanitizeEmail(emailRaw);
     logVar('contact.raw', { emailRaw, emailSanitized, phoneRaw });
     try { if (nameRaw) logVar('contact.nameGuess', nameRaw); } catch {}
 
@@ -285,12 +284,13 @@ async function runOnce() {
     const leadData: FundlyLeadInsert & { filter_success?: string | null } = {
       fundly_id: leadId,
       contact_name: (nameRaw || 'LOCKED').trim() || 'LOCKED',
-      email: emailSanitized || '',
-      phone: (isExclusive ? 'LOCKED' : (phoneRaw || 'LOCKED')).trim() || 'LOCKED',
+      email: emailSanitized || null,
+      phone: (isExclusive ? null : ((phoneRaw || '').trim() || null)),
       background_info: backgroundInfo || 'LOCKED',
       email_sent_at: null,
       created_at: new Date().toISOString().replace('Z', '+00:00'),
       can_contact: true,
+      locked: isExclusive,
       use_of_funds: uofRaw || 'LOCKED',
       location: locRaw || 'LOCKED',
       urgency: urgRaw || 'LOCKED',
@@ -349,8 +349,8 @@ async function runOnce() {
       logVar('filters.programs', { anyQualified: evalRes.anyQualified, qualified });
       const thresholdOk = evalRes.anyQualified;
       const hasEmail = !!(savedLead.email && savedLead.email.includes('@'));
-      const already = hasEmail ? await emailAlreadySent(savedLead.email) : false;
-      const allowed = hasEmail ? await canContactByEmail(savedLead.email) : false;
+      const already = hasEmail ? await emailAlreadySent(savedLead.email!) : false;
+      const allowed = hasEmail ? await canContactByEmail(savedLead.email!) : false;
       const shouldEmail = newToday && thresholdOk && !already && allowed;
 
       if (shouldEmail) {
@@ -359,9 +359,9 @@ async function runOnce() {
         }
         if (emailSendingEnabled()) {
           const programKey = leadData.filter_success && leadData.filter_success !== 'FAIL_ALL' ? leadData.filter_success : undefined;
-          const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email, programKey }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
+          const res = await withBackoff(() => sendLeadEmail({ to: savedLead.email!, programKey }), { label: 'sendEmail', maxRetries: 4 }).catch(() => null);
           if (res && !(res as any).skipped) {
-            await updateEmailSentAt(savedLead.email, new Date());
+            await updateEmailSentAt(savedLead.email!, new Date());
             emailed = 1;
             logMsg('Email sent', { to: savedLead.email, programKey });
           }

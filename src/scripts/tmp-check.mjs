@@ -1,0 +1,16 @@
+import pg from 'pg';
+const { Client } = pg;
+const cs = process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_0DN5UOYPQtZz@ep-winter-lake-ada0qmed-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require';
+const c = new Client({ connectionString: cs, ssl: { rejectUnauthorized: false } });
+await c.connect();
+let r = await c.query("SELECT count(*)::int AS c FROM fundly_leads WHERE email='LOCKED'");
+console.log('lockedEmail', r.rows[0].c);
+r = await c.query("SELECT count(*)::int AS c FROM fundly_leads WHERE email IS NULL OR btrim(email)='' OR position('@' in email)=0");
+console.log('emptyEmail', r.rows[0].c);
+r = await c.query("SELECT count(*)::int AS c FROM fundly_leads WHERE phone='LOCKED'");
+console.log('lockedPhone', r.rows[0].c);
+r = await c.query("SELECT count(*)::int AS c FROM fundly_leads WHERE phone IS NULL OR btrim(phone)=''");
+console.log('nullPhone', r.rows[0].c);
+const dups = await c.query("SELECT lower(email) AS e, count(*)::int AS cnt FROM fundly_leads WHERE email IS NOT NULL GROUP BY 1 HAVING count(*)>1 ORDER BY count(*) DESC LIMIT 5");
+console.log('dupEmails', dups.rows);
+await c.end();

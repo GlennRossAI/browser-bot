@@ -2,12 +2,13 @@ export interface FundlyLead {
   id?: number; // Database auto-increment ID
   fundly_id: string; // ID from Fundly system
   contact_name: string;
-  email: string;
-  phone: string;
+  email?: string | null;
+  phone?: string | null;
   background_info: string;
   email_sent_at?: Date | null;
   created_at: string; // ISO timestamp
   can_contact: boolean;
+  locked?: boolean | null;
   use_of_funds: string;
   location: string;
   urgency: string;

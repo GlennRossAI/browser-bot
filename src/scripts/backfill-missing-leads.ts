@@ -31,7 +31,7 @@ async function extractLeadFromPipeline(page: Page, leadId: string) {
   if (!emailRaw) {
     try { const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href'); if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0]; } catch {}
   }
-  const emailSanitized = sanitizeEmail(emailRaw) || '';
+  const emailSanitized = isExclusive ? null : sanitizeEmail(emailRaw);
 
   // Name
   let nameRaw = '';
@@ -75,12 +75,13 @@ async function extractLeadFromPipeline(page: Page, leadId: string) {
   const lead: FundlyLeadInsert & { filter_success?: string | null; [k: string]: any } = {
     fundly_id: leadId,
     contact_name: nameRaw || 'LOCKED',
-    email: emailSanitized || '',
-    phone: (isExclusive ? 'LOCKED' : (phoneRaw || 'LOCKED')).trim() || 'LOCKED',
+    email: emailSanitized || null,
+    phone: (isExclusive ? null : ((phoneRaw || '').trim() || null)),
     background_info: backgroundInfo || 'LOCKED',
     email_sent_at: null,
     created_at: new Date().toISOString().replace('Z', '+00:00'),
     can_contact: true,
+    locked: isExclusive,
     use_of_funds: uofRaw || 'LOCKED',
     location: locRaw || 'LOCKED',
     urgency: urgRaw || 'LOCKED',
@@ -185,8 +186,8 @@ async function main() {
       const hasEmail = !!(saved.email && saved.email.includes('@'));
       const evalRes = evaluatePrograms(saved);
       const thresholdOk = evalRes.anyQualified && saved.filter_success && saved.filter_success !== 'FAIL_ALL';
-      const already = hasEmail ? await emailAlreadySent(saved.email) : false;
-      const allowed = hasEmail ? await canContactByEmail(saved.email) : false;
+      const already = hasEmail ? await emailAlreadySent(saved.email!) : false;
+      const allowed = hasEmail ? await canContactByEmail(saved.email!) : false;
       const shouldEmail = !isExclusive && thresholdOk && hasEmail && !already && allowed;
 
       if (shouldEmail) {
@@ -218,4 +219,3 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
-

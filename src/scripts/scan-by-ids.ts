@@ -2,7 +2,7 @@
 import 'dotenv/config';
 import { chromium, Page } from 'playwright';
 import { insertLead } from '../database/queries/leads.js';
-import { closePool } from '../database/utils/connection.js';
+import { query, closePool } from '../database/utils/connection.js';
 import { FundlyLeadInsert } from '../types/lead.js';
 import { evaluatePrograms } from '../filters/threshold.js';
 import { sanitizeEmail } from '../utils/email_utils.js';
@@ -50,13 +50,14 @@ async function extractFromPipeline(page: Page, pipelineId: string) {
   // Contact info
   let emailRaw = await field('Email');
   if (!emailRaw || emailRaw === 'LOCKED') { try { const href = await page.locator('a[href^="mailto:"]').first().getAttribute('href'); if (href) emailRaw = href.replace(/^mailto:/i, '').split('?')[0]; } catch {} }
-  const email = sanitizeEmail(emailRaw) || 'LOCKED';
+  const email = isExclusive ? null : (sanitizeEmail(emailRaw));
   let name = await field('Name');
   if (!name || name === 'LOCKED') { try { name = await page.locator('p:text-is("Full Name") + p').first().textContent() || ''; } catch {} }
   name = cleanName(name);
-  let phone = await field('Phone');
-  if (!phone || phone === 'LOCKED') { try { const tel = await page.locator('a[href^="tel:"]').first().getAttribute('href'); if (tel) phone = tel.replace(/^tel:/i, ''); } catch {} }
-  phone = isExclusive ? 'LOCKED' : (phone || 'LOCKED');
+  const phoneLabelVal = await field('Phone');
+  let phoneHref = phoneLabelVal;
+  if (!phoneHref || phoneHref === 'LOCKED') { try { const tel = await page.locator('a[href^="tel:"]').first().getAttribute('href'); if (tel) phoneHref = tel.replace(/^tel:/i, ''); } catch {} }
+  const phone = isExclusive ? null : ((phoneHref || '').trim() || null);
 
   // Details
   const use_of_funds = await field('Use of Funds');
@@ -82,12 +83,13 @@ async function extractFromPipeline(page: Page, pipelineId: string) {
   const lead: FundlyLeadInsert & { filter_success?: string | null; [k: string]: any } = {
     fundly_id: pipelineId,
     contact_name: name,
-    email,
-    phone,
+    email: email || null,
+    phone: phone || null,
     background_info,
     email_sent_at: null,
     created_at: new Date().toISOString().replace('Z', '+00:00'),
     can_contact: true,
+    locked: isExclusive,
     use_of_funds,
     location,
     urgency,
@@ -134,7 +136,13 @@ async function main() {
     await page.waitForURL(/\/c\/business(\b|\/|\?|$)/, { timeout: 15000 });
 
     const args = process.argv.slice(2);
-    const ids = args.length ? args : ['573311', '574106'];
+    let ids = args;
+    if (!ids.length) {
+      // Pull recent fundly_ids that are missing email or phone
+      const res = await query("SELECT fundly_id FROM fundly_leads WHERE (email IS NULL OR phone IS NULL) AND fundly_id IS NOT NULL ORDER BY id DESC LIMIT 25");
+      ids = res.rows.map((r: any) => String(r.fundly_id)).filter(Boolean);
+      if (!ids.length) ids = ['573311', '574106'];
+    }
     for (const id of ids) {
       await extractFromPipeline(page, id);
     }
