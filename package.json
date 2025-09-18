@@ -13,6 +13,7 @@
     "scan:dry": "DRY_RUN=true tsx src/scripts/scan-once.ts",
     "scan:top2:dry": "DRY_RUN=true tsx src/scripts/scan-pipeline-top2.ts",
     "scan:ids:dry": "DRY_RUN=true tsx src/scripts/scan-by-ids.ts",
+    "backfill:missing": "tsx src/scripts/backfill-missing-leads.ts",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
